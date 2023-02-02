@@ -14,7 +14,7 @@ namespace Czech
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Print());
+            Application.Run(new Form1());
         }
     }
 }
