@@ -63,7 +63,7 @@ public partial class Print : System.Windows.Forms.Form
             pageSettings.PaperSize.RawKind = 11;
             /* This assumes that a variable of type string, named filePath,
                has been set to the path of the file to print. */
-            streamToPrint = new StreamReader("C:\\Users\\Reza\\Documents\\New folder\\File.txt");
+            streamToPrint = new StreamReader("C:\\Users\\Reza\\Documents\\ConnectCefApp.log");
             try
             {
                 printFont = new Font("2  Titr", 10, FontStyle.Bold);
@@ -77,9 +77,8 @@ public partial class Print : System.Windows.Forms.Form
                 // Create a new instance of Margins with one inch margins.
                 Margins margins = new Margins();
                 pd.DefaultPageSettings.Margins = margins;
-
-
-                pd.Print();
+               printPreviewDialog.ShowDialog();
+                //pd.Print();
             }
             finally
             {
@@ -190,6 +189,7 @@ public partial class Print : System.Windows.Forms.Form
             // printDialog1
             // 
             this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.PrintToFile = true;
             this.printDialog1.UseEXDialog = true;
             // 
             // printPreviewDialog1
@@ -197,6 +197,7 @@ public partial class Print : System.Windows.Forms.Form
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
             this.printPreviewDialog1.Enabled = true;
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
