@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.PrintDialog1 = new System.Windows.Forms.PrintDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.document = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
@@ -40,6 +39,10 @@
             // 
             this.PrintDialog1.Document = this.document;
             this.PrintDialog1.UseEXDialog = true;
+            // 
+            // document
+            // 
+            this.document.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.document_PrintPage);
             // 
             // button1
             // 
@@ -51,21 +54,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // document
-            // 
-            this.document.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.document_PrintPage);
-            // 
-            // printPreviewControl1
-            // 
-            this.printPreviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.printPreviewControl1.Document = this.document;
-            this.printPreviewControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.printPreviewControl1.Location = new System.Drawing.Point(89, 0);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(279, 288);
-            this.printPreviewControl1.TabIndex = 1;
-            this.printPreviewControl1.Zoom = 0.25454545454545452D;
             // 
             // printPreviewDialog1
             // 
@@ -82,10 +70,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 288);
-            this.Controls.Add(this.printPreviewControl1);
             this.Controls.Add(this.button1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
@@ -95,7 +83,6 @@
         private System.Windows.Forms.PrintDialog PrintDialog1;
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument document;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
