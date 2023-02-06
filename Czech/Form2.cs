@@ -26,6 +26,9 @@ namespace Czech
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
             PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
+                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
+                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
 
             DialogResult result = PrintDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -63,7 +66,7 @@ namespace Czech
         {
             PageSettings pageSettings = new PageSettings();
             pageSettings.Landscape = true;
-            PaperSize paperSize = new PaperSize("A5", 899, 444);
+            PaperSize paperSize = new PaperSize();
             paperSize.RawKind = 11;
 
             document.DefaultPageSettings = pageSettings;
