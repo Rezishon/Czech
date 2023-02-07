@@ -6,6 +6,6 @@ namespace Czech
 {
     internal class Print
     {
-        private 
+        
     }
 }
