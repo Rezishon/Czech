@@ -12,6 +12,8 @@ namespace Czech
 {
     public partial class Page_Setting : Form
     {
+        PublicClass publicClass = Program.Main().Z
+        // Print Class:
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
         string[] file_text = new string[8];
 
@@ -38,26 +40,12 @@ namespace Czech
 
         private void Page_Setting_Load(object sender, EventArgs e)
         {
-            if (File.Exists(file_path) == false)
-            {
-                File.WriteAllText(file_path, "");
-
-                file_text[0] = "899";
-                file_text[1] = "444";
-
-                saveToFile();
-                Page_Setting_Load(null, null);
-            }
-            else
-            {
-                file_text = File.ReadAllLines(file_path);
-
-                txtHeight.Text = file_text[0];
-                txtWidth.Text = file_text[1];
-            }
-            txtWidth.Focus();
+            // PublicClass pageLoad {}
+            txtHeight.Text = file_text[0];
+            txtWidth.Text = file_text[1];
         }
-        
+
+        // Page Class:
         public void saveToFile()
         {
             File.WriteAllText(file_path, "");

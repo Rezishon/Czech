@@ -10,10 +10,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            string path = Directory.GetCurrentDirectory() + "\\Resources\\image.jpg";
-            Console.WriteLine(path);
+            Class1 class1 = new Class1();
+            class1.Num = 1;
+            Class1 class2 = class1;
+            Console.WriteLine(class2.Num);
+            class2.Num = 3;
+            Console.WriteLine(class2.Num);
             Console.ReadKey();
-
         }
     }
 }

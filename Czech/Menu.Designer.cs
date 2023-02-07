@@ -41,7 +41,7 @@
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(16, 15);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(107, 43);
             this.btnPrint.TabIndex = 0;
@@ -52,17 +52,18 @@
             // btnPageSetting
             // 
             this.btnPageSetting.Location = new System.Drawing.Point(131, 15);
-            this.btnPageSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPageSetting.Margin = new System.Windows.Forms.Padding(4);
             this.btnPageSetting.Name = "btnPageSetting";
             this.btnPageSetting.Size = new System.Drawing.Size(108, 43);
             this.btnPageSetting.TabIndex = 0;
             this.btnPageSetting.Text = "تنظیمات صفحه";
             this.btnPageSetting.UseVisualStyleBackColor = true;
+            this.btnPageSetting.Click += new System.EventHandler(this.btnPageSetting_Click);
             // 
             // btnTextSetting
             // 
             this.btnTextSetting.Location = new System.Drawing.Point(247, 15);
-            this.btnTextSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTextSetting.Margin = new System.Windows.Forms.Padding(4);
             this.btnTextSetting.Name = "btnTextSetting";
             this.btnTextSetting.Size = new System.Drawing.Size(116, 43);
             this.btnTextSetting.TabIndex = 0;
@@ -73,7 +74,7 @@
             // btnBackward
             // 
             this.btnBackward.Location = new System.Drawing.Point(371, 15);
-            this.btnBackward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackward.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(107, 43);
             this.btnBackward.TabIndex = 1;
@@ -110,7 +111,7 @@
             this.Controls.Add(this.btnPageSetting);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

@@ -10,6 +10,8 @@ namespace Czech
 {
     public partial class Form1 : Form
     {
+        PublicClass publicClass = new PublicClass();
+
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace Czech
 
             // }
 
+
+            // make a new form is wrong should use pointers to show and close that form
             Menu menu = new Menu();
             this.Hide();
             menu.Show();
@@ -30,31 +34,23 @@ namespace Czech
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            publicClass.intOnly(e);
         }
 
         private void txtHeitht_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            publicClass.doubleOnly(e);
         }
 
         private void txtWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            publicClass.intOnly(e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
     }
 }
