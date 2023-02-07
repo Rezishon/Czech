@@ -10,9 +10,8 @@ namespace Czech
 {
     public partial class Form1 : Form
     {
-        public double width;
-        public double height;
-        Print print = new Print();
+        string image_path = string.Empty;
+        Image czech_image = null;
         public Form1()
         {
             InitializeComponent();
@@ -20,9 +19,15 @@ namespace Czech
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            DialogResult x = MessageBox.Show("اطلاعات را تایید میکنید؟", "Printing...", MessageBoxButtons.OKCancel);
-            if (x == DialogResult.OK) print.Show();
-            
+
+            // sql commands:
+            // {
+
+            // }
+
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)

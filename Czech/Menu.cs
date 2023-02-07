@@ -3,27 +3,35 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Czech
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-
         string image_path = string.Empty;
         Image czech_image = null;
 
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(System.Object sender, System.EventArgs e)
+        //page items
+        private void btnBackward_Click(object sender, EventArgs e)
         {
-            
+            Form1 form1 = new Form1();
+            this.Close();
+            form1.Show();
+        }
+
+
+        //page printer button
+        private void btnPrint_Click(System.Object sender, System.EventArgs e)
+        {
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
             PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
@@ -41,13 +49,6 @@ namespace Czech
             {
 
             }
-
-
-            // sql commands:
-            // {
-
-            // }
-
         }
 
         private void document_PrintPage(object sender, PrintPageEventArgs e)
@@ -58,6 +59,7 @@ namespace Czech
                 string text = "In document_PrintPage method.\nIn document_PrintPage method. 2\nIn document_PrintPage method. 3";
                 Font printFont = new Font("Arial", 15, FontStyle.Regular);
 
+                // Error
                 e.Graphics.DrawImage(czech_image, 0, 0);
                 e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
             }
@@ -67,7 +69,7 @@ namespace Czech
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
             image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
             czech_image = Image.FromFile(image_path);
@@ -91,12 +93,5 @@ namespace Czech
             Font printFont = new Font("Arial", 35, FontStyle.Regular);
         }
 
-        private void btnBackward_Click(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            this.Close();
-            menu.Show();
-
-        }
     }
 }

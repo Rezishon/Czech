@@ -37,10 +37,6 @@
             this.txtFor = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
-            this.lblHeight = new System.Windows.Forms.Label();
-            this.lblWidth = new System.Windows.Forms.Label();
-            this.txtWidth = new System.Windows.Forms.TextBox();
-            this.txtHeitht = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblDate
@@ -121,7 +117,7 @@
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnOk.Location = new System.Drawing.Point(12, 232);
+            this.btnOk.Location = new System.Drawing.Point(12, 194);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(301, 34);
             this.btnOk.TabIndex = 5;
@@ -129,63 +125,22 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // lblHeight
-            // 
-            this.lblHeight.AutoSize = true;
-            this.lblHeight.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblHeight.Location = new System.Drawing.Point(263, 193);
-            this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(57, 33);
-            this.lblHeight.TabIndex = 1;
-            this.lblHeight.Text = ": طول";
-            // 
-            // lblWidth
-            // 
-            this.lblWidth.AutoSize = true;
-            this.lblWidth.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblWidth.Location = new System.Drawing.Point(105, 193);
-            this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(62, 33);
-            this.lblWidth.TabIndex = 1;
-            this.lblWidth.Text = ": عرض";
-            // 
-            // txtWidth
-            // 
-            this.txtWidth.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtWidth.Location = new System.Drawing.Point(12, 196);
-            this.txtWidth.Name = "txtWidth";
-            this.txtWidth.Size = new System.Drawing.Size(94, 30);
-            this.txtWidth.TabIndex = 4;
-            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
-            // 
-            // txtHeitht
-            // 
-            this.txtHeitht.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtHeitht.Location = new System.Drawing.Point(165, 196);
-            this.txtHeitht.Name = "txtHeitht";
-            this.txtHeitht.Size = new System.Drawing.Size(100, 30);
-            this.txtHeitht.TabIndex = 4;
-            this.txtHeitht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeitht_KeyPress);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 278);
+            this.ClientSize = new System.Drawing.Size(321, 237);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtFor);
-            this.Controls.Add(this.txtHeitht);
-            this.Controls.Add(this.txtWidth);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtMount);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.lblWidth);
-            this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFor);
             this.Controls.Add(this.lblNmount);
             this.Controls.Add(this.lblDate);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,10 +158,6 @@
         private System.Windows.Forms.TextBox txtFor;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Label lblHeight;
-        private System.Windows.Forms.Label lblWidth;
-        private System.Windows.Forms.TextBox txtWidth;
-        private System.Windows.Forms.TextBox txtHeitht;
     }
 }
 
