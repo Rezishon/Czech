@@ -43,9 +43,10 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblDate.Location = new System.Drawing.Point(252, 9);
+            this.lblDate.Location = new System.Drawing.Point(336, 11);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(61, 33);
+            this.lblDate.Size = new System.Drawing.Size(75, 42);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = ": تاریخ";
             // 
@@ -53,9 +54,10 @@
             // 
             this.lblNmount.AutoSize = true;
             this.lblNmount.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblNmount.Location = new System.Drawing.Point(259, 57);
+            this.lblNmount.Location = new System.Drawing.Point(345, 70);
+            this.lblNmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNmount.Name = "lblNmount";
-            this.lblNmount.Size = new System.Drawing.Size(54, 33);
+            this.lblNmount.Size = new System.Drawing.Size(68, 42);
             this.lblNmount.TabIndex = 1;
             this.lblNmount.Text = ": مبلغ";
             // 
@@ -63,9 +65,10 @@
             // 
             this.lblFor.AutoSize = true;
             this.lblFor.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblFor.Location = new System.Drawing.Point(239, 100);
+            this.lblFor.Location = new System.Drawing.Point(319, 123);
+            this.lblFor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFor.Name = "lblFor";
-            this.lblFor.Size = new System.Drawing.Size(74, 33);
+            this.lblFor.Size = new System.Drawing.Size(91, 42);
             this.lblFor.TabIndex = 1;
             this.lblFor.Text = ": در وجه";
             // 
@@ -73,53 +76,59 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(216, 149);
+            this.label1.Location = new System.Drawing.Point(288, 183);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 33);
+            this.label1.Size = new System.Drawing.Size(120, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = ": شماره ملی";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(16, 15);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(265, 36);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // txtMount
             // 
             this.txtMount.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtMount.Location = new System.Drawing.Point(12, 57);
+            this.txtMount.Location = new System.Drawing.Point(16, 70);
+            this.txtMount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMount.Name = "txtMount";
-            this.txtMount.Size = new System.Drawing.Size(200, 30);
+            this.txtMount.Size = new System.Drawing.Size(265, 36);
             this.txtMount.TabIndex = 4;
             this.txtMount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
             // 
             // txtFor
             // 
             this.txtFor.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtFor.Location = new System.Drawing.Point(12, 96);
+            this.txtFor.Location = new System.Drawing.Point(16, 118);
+            this.txtFor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFor.Multiline = true;
             this.txtFor.Name = "txtFor";
-            this.txtFor.Size = new System.Drawing.Size(200, 56);
+            this.txtFor.Size = new System.Drawing.Size(265, 68);
             this.txtFor.TabIndex = 4;
             // 
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtCode.Location = new System.Drawing.Point(12, 158);
+            this.txtCode.Location = new System.Drawing.Point(16, 194);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(200, 30);
+            this.txtCode.Size = new System.Drawing.Size(265, 36);
             this.txtCode.TabIndex = 4;
             this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
             // 
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnOk.Location = new System.Drawing.Point(12, 194);
+            this.btnOk.Location = new System.Drawing.Point(16, 239);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(301, 34);
+            this.btnOk.Size = new System.Drawing.Size(401, 42);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "تایید";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -127,9 +136,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 237);
+            this.ClientSize = new System.Drawing.Size(428, 292);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtFor);
             this.Controls.Add(this.txtCode);
@@ -139,6 +148,7 @@
             this.Controls.Add(this.lblFor);
             this.Controls.Add(this.lblNmount);
             this.Controls.Add(this.lblDate);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

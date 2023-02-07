@@ -10,8 +10,6 @@ namespace Czech
 {
     public partial class Form1 : Form
     {
-        string image_path = string.Empty;
-        Image czech_image = null;
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +24,8 @@ namespace Czech
             // }
 
             Menu menu = new Menu();
-            this.Hide();
             menu.Show();
+            this.Hide();
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -53,5 +51,6 @@ namespace Czech
                 e.Handled = true;
             }
         }
+
     }
 }

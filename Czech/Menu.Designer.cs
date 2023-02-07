@@ -40,9 +40,10 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(12, 12);
+            this.btnPrint.Location = new System.Drawing.Point(16, 15);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(80, 35);
+            this.btnPrint.Size = new System.Drawing.Size(107, 43);
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "چاپ";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -50,27 +51,31 @@
             // 
             // btnPageSetting
             // 
-            this.btnPageSetting.Location = new System.Drawing.Point(98, 12);
+            this.btnPageSetting.Location = new System.Drawing.Point(131, 15);
+            this.btnPageSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPageSetting.Name = "btnPageSetting";
-            this.btnPageSetting.Size = new System.Drawing.Size(81, 35);
+            this.btnPageSetting.Size = new System.Drawing.Size(108, 43);
             this.btnPageSetting.TabIndex = 0;
             this.btnPageSetting.Text = "تنظیمات صفحه";
             this.btnPageSetting.UseVisualStyleBackColor = true;
             // 
             // btnTextSetting
             // 
-            this.btnTextSetting.Location = new System.Drawing.Point(185, 12);
+            this.btnTextSetting.Location = new System.Drawing.Point(247, 15);
+            this.btnTextSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTextSetting.Name = "btnTextSetting";
-            this.btnTextSetting.Size = new System.Drawing.Size(87, 35);
+            this.btnTextSetting.Size = new System.Drawing.Size(116, 43);
             this.btnTextSetting.TabIndex = 0;
             this.btnTextSetting.Text = "تنظیمات متن";
             this.btnTextSetting.UseVisualStyleBackColor = true;
+            this.btnTextSetting.Click += new System.EventHandler(this.btnTextSetting_Click);
             // 
             // btnBackward
             // 
-            this.btnBackward.Location = new System.Drawing.Point(278, 12);
+            this.btnBackward.Location = new System.Drawing.Point(371, 15);
+            this.btnBackward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(80, 35);
+            this.btnBackward.Size = new System.Drawing.Size(107, 43);
             this.btnBackward.TabIndex = 1;
             this.btnBackward.Text = "صفحه قبل";
             this.btnBackward.UseVisualStyleBackColor = true;
@@ -97,14 +102,15 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 57);
+            this.ClientSize = new System.Drawing.Size(491, 70);
             this.Controls.Add(this.btnBackward);
             this.Controls.Add(this.btnTextSetting);
             this.Controls.Add(this.btnPageSetting);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

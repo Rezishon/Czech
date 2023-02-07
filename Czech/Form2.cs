@@ -18,6 +18,7 @@ namespace Czech
         {
             InitializeComponent();
         }
+
         private void Form2_Load(object sender, EventArgs e)
         {
             if (File.Exists(file_path) == false)
@@ -41,24 +42,23 @@ namespace Czech
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
             foreach (string line in file_text)
             {
                 textBox1.Text += line + Environment.NewLine;
-                //textBox1.Text += '\n';
             }
+            Form2_Load(null, null);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //foreach (string line in file_text)
-            //{
-            //    MessageBox.Show("-" + line + "-");
-            //}
             file_text[4] = textBox1.Text;
             textBox1.Text = "";
+
+            File.WriteAllText(file_path, "");
             foreach (string line in file_text)
             {
-                File.WriteAllText(file_path, line);
+                File.AppendAllText(file_path, line + Environment.NewLine);
             }
                
         }

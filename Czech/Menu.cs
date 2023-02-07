@@ -24,8 +24,8 @@ namespace Czech
         private void btnBackward_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            this.Close();
             form1.Show();
+            this.Close();
         }
 
 
@@ -93,5 +93,11 @@ namespace Czech
             Font printFont = new Font("Arial", 35, FontStyle.Regular);
         }
 
+        private void btnTextSetting_Click(object sender, EventArgs e)
+        {
+            Page_Setting page_setting = new Page_Setting();
+            page_setting.Show();
+            this.Close();
+        }
     }
 }
