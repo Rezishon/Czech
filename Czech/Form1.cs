@@ -24,8 +24,8 @@ namespace Czech
             // }
 
             Menu menu = new Menu();
-            menu.Show();
             this.Hide();
+            menu.Show();
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -52,5 +52,9 @@ namespace Czech
             }
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
