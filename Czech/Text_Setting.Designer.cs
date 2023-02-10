@@ -33,29 +33,31 @@
             this.lblHeight = new System.Windows.Forms.Label();
             this.txtDateInNum2 = new System.Windows.Forms.TextBox();
             this.btnFont1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFont2 = new System.Windows.Forms.Button();
             this.txtDateInWord2 = new System.Windows.Forms.TextBox();
             this.txtDateInWord1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFont3 = new System.Windows.Forms.Button();
             this.txtMoneyInWord2 = new System.Windows.Forms.TextBox();
             this.txtMoneyInWord1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnFont4 = new System.Windows.Forms.Button();
             this.txtFor2 = new System.Windows.Forms.TextBox();
             this.txtFor1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnFont5 = new System.Windows.Forms.Button();
             this.txtNationalCode2 = new System.Windows.Forms.TextBox();
             this.txtNationalCode1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnFont6 = new System.Windows.Forms.Button();
             this.txtMoneyInNum2 = new System.Windows.Forms.TextBox();
             this.txtMoneyInNum1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.pPC = new System.Windows.Forms.PrintPreviewControl();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnBackward
@@ -108,14 +110,14 @@
             this.btnFont1.UseVisualStyleBackColor = true;
             this.btnFont1.Click += new System.EventHandler(this.btnFont1_Click);
             // 
-            // button1
+            // btnFont2
             // 
-            this.button1.Location = new System.Drawing.Point(12, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 36);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "font";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFont2.Location = new System.Drawing.Point(12, 58);
+            this.btnFont2.Name = "btnFont2";
+            this.btnFont2.Size = new System.Drawing.Size(44, 36);
+            this.btnFont2.TabIndex = 13;
+            this.btnFont2.Text = "font";
+            this.btnFont2.UseVisualStyleBackColor = true;
             // 
             // txtDateInWord2
             // 
@@ -146,14 +148,14 @@
             this.label1.TabIndex = 11;
             this.label1.Text = ": تاریخ به حروف";
             // 
-            // button2
+            // btnFont3
             // 
-            this.button2.Location = new System.Drawing.Point(12, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 36);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "font";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFont3.Location = new System.Drawing.Point(12, 102);
+            this.btnFont3.Name = "btnFont3";
+            this.btnFont3.Size = new System.Drawing.Size(44, 36);
+            this.btnFont3.TabIndex = 17;
+            this.btnFont3.Text = "font";
+            this.btnFont3.UseVisualStyleBackColor = true;
             // 
             // txtMoneyInWord2
             // 
@@ -184,14 +186,14 @@
             this.label2.TabIndex = 15;
             this.label2.Text = ": مبلغ به حروف";
             // 
-            // button3
+            // btnFont4
             // 
-            this.button3.Location = new System.Drawing.Point(12, 146);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 36);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "font";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFont4.Location = new System.Drawing.Point(12, 146);
+            this.btnFont4.Name = "btnFont4";
+            this.btnFont4.Size = new System.Drawing.Size(44, 36);
+            this.btnFont4.TabIndex = 21;
+            this.btnFont4.Text = "font";
+            this.btnFont4.UseVisualStyleBackColor = true;
             // 
             // txtFor2
             // 
@@ -222,14 +224,14 @@
             this.label3.TabIndex = 19;
             this.label3.Text = ": در وجه";
             // 
-            // button4
+            // btnFont5
             // 
-            this.button4.Location = new System.Drawing.Point(12, 190);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 36);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "font";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFont5.Location = new System.Drawing.Point(12, 190);
+            this.btnFont5.Name = "btnFont5";
+            this.btnFont5.Size = new System.Drawing.Size(44, 36);
+            this.btnFont5.TabIndex = 25;
+            this.btnFont5.Text = "font";
+            this.btnFont5.UseVisualStyleBackColor = true;
             // 
             // txtNationalCode2
             // 
@@ -260,14 +262,14 @@
             this.label4.TabIndex = 23;
             this.label4.Text = ": شماره ملی";
             // 
-            // button5
+            // btnFont6
             // 
-            this.button5.Location = new System.Drawing.Point(12, 233);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(44, 36);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "font";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnFont6.Location = new System.Drawing.Point(12, 233);
+            this.btnFont6.Name = "btnFont6";
+            this.btnFont6.Size = new System.Drawing.Size(44, 36);
+            this.btnFont6.TabIndex = 29;
+            this.btnFont6.Text = "font";
+            this.btnFont6.UseVisualStyleBackColor = true;
             // 
             // txtMoneyInNum2
             // 
@@ -298,48 +300,74 @@
             this.label5.TabIndex = 27;
             this.label5.Text = ": مبلغ به عدد";
             // 
-            // button6
+            // btnSave
             // 
-            this.button6.Location = new System.Drawing.Point(12, 276);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(307, 38);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "ذخیره";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(12, 276);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(307, 38);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = "ذخیره";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // printPreviewControl1
+            // pPC
             // 
-            this.printPreviewControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.printPreviewControl1.Location = new System.Drawing.Point(496, 0);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(426, 334);
-            this.printPreviewControl1.TabIndex = 31;
-            this.printPreviewControl1.Click += new System.EventHandler(this.printPreviewControl1_Click);
+            this.pPC.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pPC.Location = new System.Drawing.Point(545, 0);
+            this.pPC.Name = "pPC";
+            this.pPC.Size = new System.Drawing.Size(377, 334);
+            this.pPC.TabIndex = 31;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(483, 70);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 32;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(448, 202);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(18, 17);
+            this.checkBox2.TabIndex = 33;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Text_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 334);
-            this.Controls.Add(this.printPreviewControl1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.pPC);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnFont6);
             this.Controls.Add(this.txtMoneyInNum2);
             this.Controls.Add(this.txtMoneyInNum1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnFont5);
             this.Controls.Add(this.txtNationalCode2);
             this.Controls.Add(this.txtNationalCode1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnFont4);
             this.Controls.Add(this.txtFor2);
             this.Controls.Add(this.txtFor1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnFont3);
             this.Controls.Add(this.txtMoneyInWord2);
             this.Controls.Add(this.txtMoneyInWord1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFont2);
             this.Controls.Add(this.txtDateInWord2);
             this.Controls.Add(this.txtDateInWord1);
             this.Controls.Add(this.label1);
@@ -352,6 +380,7 @@
             this.Name = "Text_Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Text_Setting";
+            this.Load += new System.EventHandler(this.Text_Setting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,28 +393,30 @@
         private System.Windows.Forms.Label lblHeight;
         private System.Windows.Forms.TextBox txtDateInNum2;
         private System.Windows.Forms.Button btnFont1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFont2;
         private System.Windows.Forms.TextBox txtDateInWord2;
         private System.Windows.Forms.TextBox txtDateInWord1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFont3;
         private System.Windows.Forms.TextBox txtMoneyInWord2;
         private System.Windows.Forms.TextBox txtMoneyInWord1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnFont4;
         private System.Windows.Forms.TextBox txtFor2;
         private System.Windows.Forms.TextBox txtFor1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFont5;
         private System.Windows.Forms.TextBox txtNationalCode2;
         private System.Windows.Forms.TextBox txtNationalCode1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnFont6;
         private System.Windows.Forms.TextBox txtMoneyInNum2;
         private System.Windows.Forms.TextBox txtMoneyInNum1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PrintPreviewControl pPC;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

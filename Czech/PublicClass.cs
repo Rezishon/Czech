@@ -11,45 +11,54 @@ namespace Czech
     public class PublicClass
     {
         #region Attributes
-        Form1 form1 = new Form1();
+
+        static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
+        static string[] file_text = new string[22];
+        static PrintDocument document = new PrintDocument();
+        static string image_path = string.Empty;
+        static Image czech_image = null;
+        static PrintDialog PrintDialog1 = new PrintDialog();
+        static PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
+
+        static string Date_ = string.Empty;
+        static string Money_ = string.Empty;
+        static string For_  = string.Empty;
+        static string NationalCode_ = string.Empty;
 
         static private string pageWidth_;
         static private string pageHeight_;
-
+        
         static private string line1X_;
         static private string line1Y_;
-        static private string line1Font;
+        static public Font line1Font;
 
         static private string line2X_;
         static private string line2Y_;
-        static private string line2Font;
+        static private Font line2Font;
 
         static private string line3X_;
         static private string line3Y_;
-        static private string line3Font;
+        static private Font line3Font;
 
         static private string line4X_;
         static private string line4Y_;
-        static private string line4Font;
+        static private Font line4Font;
 
         static private string line5X_;
         static private string line5Y_;
-        static private string line5Font;
+        static private Font line5Font;
 
         static private string line6X_;
         static private string line6Y_;
-        static private string line6Font;
+        static private Font line6Font;
 
         static private string line7X_;
         static private string line7Y_;
-        static private string line7Font;
+        static private Font line7Font;
 
         static private Image Image;
 
         #endregion
-
-        static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
-        static string[] file_text = new string[8];
 
         public PublicClass()
         {
@@ -61,6 +70,31 @@ namespace Czech
             string text = "In document_PrintPage method.\nIn document_PrintPage method. 2";
             Font printFont = new Font("Arial", 35, FontStyle.Regular);
         }
+
+        #region First Page Date
+
+        public string Date 
+        {
+            set { Date_ = value; }
+            get { return Date_; }
+        }
+        public string Money
+        {
+            set { Money_ = value; }
+            get { return Money_; }
+        }
+        public string For
+        {
+            set { For_ = value; }
+            get { return For_; }
+        }
+        public string NationalCode
+        {
+            set { NationalCode_ = value; }
+            get { return NationalCode_; }
+        }
+
+        #endregion
 
         #region File Path && File Path
 
@@ -77,7 +111,7 @@ namespace Czech
 
         #endregion
 
-        #region Page Settings
+        #region Page
 
         public string PageWidth
         {
@@ -98,6 +132,9 @@ namespace Czech
                 File.WriteAllText(File_Path, "");
                 SaveTextFile("899", 0);
                 SaveTextFile("444", 1);
+                SaveTextFile("true", 8);
+                SaveTextFile("true", 18);
+
                 pageLoad();
             }
             else
@@ -105,18 +142,15 @@ namespace Czech
                 File_Text = File.ReadAllLines(File_Path);
                 PageHeight = File_Text[0];
                 PageWidth = File_Text[1];
+                image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                czech_image = Image.FromFile(image_path);
             }
         }
 
         public void page_setting()
         {
-            //PageSettings pageSettings = new PageSettings();
-            //pageSettings.Landscape = true;
-            //PaperSize paperSize = new PaperSize();
-            //paperSize.RawKind = 11;
-
-            //document.DefaultPageSettings = pageSettings;
-            //document.DefaultPageSettings.PaperSize = paperSize;
+            document.DefaultPageSettings.Landscape = true;
+            document.DefaultPageSettings.PaperSize.RawKind = 11;
         }
 
         #endregion
@@ -131,30 +165,25 @@ namespace Czech
 
         #region Print
 
-        string image_path = string.Empty;
-        Image czech_image = null;
-        private void btnPrint(System.Object sender, System.EventArgs e)
+        public void btnPrint()
         {
-            //PrintDialog1.AllowSomePages = true;
-            //PrintDialog1.Document = document;
-            //PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            //MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
-            //    $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
-            //    $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
+            PrintDialog1.AllowSomePages = true;
+            PrintDialog1.Document = document;
+            PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
+                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
+                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
 
-            //DialogResult result = PrintDialog1.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    printPreviewDialog1.Document = document;
-            //    printPreviewDialog1.ShowDialog();
-            //}
-            //else
-            //{
-
-            //}
+            DialogResult result = PrintDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printPreviewDialog1.Document = document;
+                printPreviewDialog1.ShowDialog();
+            }
+            
         }
 
-        private void document_PrintPage(object sender, PrintPageEventArgs e)
+        private void document_PrintPage(PrintPageEventArgs e)
         {
             try
             {
@@ -178,7 +207,7 @@ namespace Czech
 
         public void SaveTextFile(string str, int index)
         {
-            file_text[index] = str;
+            File_Text[index] = str;
             try
             {
                 File.WriteAllText(File_Path, "");

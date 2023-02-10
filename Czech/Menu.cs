@@ -12,6 +12,8 @@ namespace Czech
 {
     public partial class Menu : Form
     {
+        PublicClass publicClass = new PublicClass();
+
         public Menu()
         {
             InitializeComponent();
@@ -19,9 +21,8 @@ namespace Czech
         //page items
         private void Menu_Load(object sender, EventArgs e)
         {
-            image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
-            czech_image = Image.FromFile(image_path);
-            page_setting();
+            publicClass.pageLoad();
+            publicClass.page_setting();
         }
         private void btnBackward_Click(object sender, EventArgs e)
         {
@@ -43,30 +44,10 @@ namespace Czech
             this.Close();
         }
 
-
-        string image_path = string.Empty;
-        Image czech_image = null;
-
         //page printer button
         private void btnPrint_Click(System.Object sender, System.EventArgs e)
         {
-            PrintDialog1.AllowSomePages = true;
-            PrintDialog1.Document = document;
-            PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
-                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
-                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
-
-            DialogResult result = PrintDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                printPreviewDialog1.Document = document;
-                printPreviewDialog1.ShowDialog();
-            }
-            else
-            {
-
-            }
+            publicClass.btnPrint();
         }
 
         // Page Class:
@@ -79,7 +60,7 @@ namespace Czech
                 Font printFont = new Font("Arial", 15, FontStyle.Regular);
 
                 // Error
-                e.Graphics.DrawImage(czech_image, 0, 0);
+                //e.Graphics.DrawImage(czech_image, 0, 0);========================================================
                 e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
             }
             catch (Exception ex)
@@ -90,15 +71,10 @@ namespace Czech
 
 
         // Page Class:
-        public void page_setting()
-        {
-            PageSettings pageSettings = new PageSettings();
-            pageSettings.Landscape = true;
-            PaperSize paperSize = new PaperSize();
-            paperSize.RawKind = 11;
-
-            document.DefaultPageSettings = pageSettings;
-            document.DefaultPageSettings.PaperSize = paperSize;
-        }
+        //public void page_setting()
+        //{
+        //    document.DefaultPageSettings.Landscape = true;
+        //    document.DefaultPageSettings.PaperSize.RawKind = 11;
+        //}
     }
 }

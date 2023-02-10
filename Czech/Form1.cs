@@ -10,7 +10,7 @@ namespace Czech
 {
     public partial class Form1 : Form
     {
-        PublicClass publicClass = new PublicClass();
+        PublicClass publicClass = new PublicClass();        
 
         public Form1()
         {
@@ -19,17 +19,23 @@ namespace Czech
         
         private void btnOk_Click(object sender, EventArgs e)
         {
+            publicClass.Date = dateTimePicker.Text;
+            publicClass.Money = txtMount.Text;
+            publicClass.For = txtFor.Text;
+            publicClass.NationalCode = txtCode.Text;
 
-            // sql commands:
-            // {
+            //if (publicClass.Date == string.Empty || publicClass.Money == string.Empty || publicClass.For == string.Empty || publicClass.NationalCode == string.Empty)
+            //{
+            //    MessageBox.Show("لطفا اطلاعات را تکمیل کنید");
+            //}
+            //else
+            //{
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
+            //}
 
-            // }
-
-
-            // make a new form is wrong should use pointers to show and close that form
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
+            
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -47,10 +53,15 @@ namespace Czech
             publicClass.intOnly(e);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
-        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            publicClass.pageLoad();
+            dateTimePicker.Value = DateTime.Now;
+        }
     }
 }
