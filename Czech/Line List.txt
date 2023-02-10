@@ -1,4 +1,4 @@
-﻿Line 0 = Page_Setting.txtHeight
+﻿Line 0 = Page_Setting.txtLength
 Line 1 = Page_Setting.txtWidth
 Line 2 = txtHeight
 Line 3 = txtHeight

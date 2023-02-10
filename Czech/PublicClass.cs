@@ -11,6 +11,7 @@ namespace Czech
     public class PublicClass
     {
         #region Attributes
+        Form1 form1 = new Form1();
 
         static private string pageWidth_;
         static private string pageHeight_;
@@ -61,6 +62,21 @@ namespace Czech
             Font printFont = new Font("Arial", 35, FontStyle.Regular);
         }
 
+        #region File Path && File Path
+
+        public string File_Path 
+        {
+            set { file_path = value; }
+            get { return file_path; }
+        }
+        public string[] File_Text 
+        {
+            set { file_text = value; }
+            get { return file_text; }
+        }
+
+        #endregion
+
         #region Page Settings
 
         public string PageWidth
@@ -77,19 +93,18 @@ namespace Czech
 
         public void pageLoad()
         {
-            if (System.IO.File.Exists(file_path) == false)
+            if (File.Exists(File_Path) == false)
             {
-                System.IO.File.WriteAllText(file_path, "");
-
-                file_text[0] = "899";
-                file_text[1] = "444";
-
-                SaveTextFile();
+                File.WriteAllText(File_Path, "");
+                SaveTextFile("899", 0);
+                SaveTextFile("444", 1);
                 pageLoad();
             }
             else
             {
-                file_text = File.ReadAllLines(file_path);
+                File_Text = File.ReadAllLines(File_Path);
+                PageHeight = File_Text[0];
+                PageWidth = File_Text[1];
             }
         }
 
@@ -161,12 +176,20 @@ namespace Czech
 
         #region Save Data To File
 
-        public void SaveTextFile()
+        public void SaveTextFile(string str, int index)
         {
-            File.WriteAllText(file_path, "");
-            foreach (string line in file_text)
+            file_text[index] = str;
+            try
             {
-                File.AppendAllText(file_path, line + Environment.NewLine);
+                File.WriteAllText(File_Path, "");
+                foreach (string line in File_Text)
+                {
+                    File.AppendAllText(File_Path, line + Environment.NewLine);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
         }
 

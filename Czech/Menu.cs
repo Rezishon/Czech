@@ -100,7 +100,5 @@ namespace Czech
             document.DefaultPageSettings = pageSettings;
             document.DefaultPageSettings.PaperSize = paperSize;
         }
-
-
     }
 }

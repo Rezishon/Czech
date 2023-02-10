@@ -12,7 +12,7 @@ namespace Czech
 {
     public partial class Page_Setting : Form
     {
-        PublicClass publicClass = Program.Main().Z
+        PublicClass publicClass = new PublicClass();
         // Print Class:
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
         string[] file_text = new string[8];
@@ -31,27 +31,25 @@ namespace Czech
 
         private void btnSaveToFile_Click(object sender, EventArgs e)
         {
-            file_text[0] = txtHeight.Text;
-            file_text[1] = txtWidth.Text;
-
-            saveToFile();
+            publicClass.SaveTextFile(txtLength.Text,0);
+            publicClass.SaveTextFile(txtWidth.Text, 1);
             MessageBox.Show("ذخیره شد","Save");
         }
 
         private void Page_Setting_Load(object sender, EventArgs e)
         {
-            // PublicClass pageLoad {}
-            txtHeight.Text = file_text[0];
-            txtWidth.Text = file_text[1];
+            publicClass.pageLoad();
+            txtLength.Text = publicClass.File_Text[0];
+            txtWidth.Text = publicClass.File_Text[1];
         }
 
         // Page Class:
         public void saveToFile()
         {
-            File.WriteAllText(file_path, "");
-            foreach (string line in file_text)
+            File.WriteAllText(publicClass.File_Path, "");
+            foreach (string line in publicClass.File_Text)
             {
-                File.AppendAllText(file_path, line + Environment.NewLine);
+                File.AppendAllText(publicClass.File_Path, line + Environment.NewLine);
             }
         }
 

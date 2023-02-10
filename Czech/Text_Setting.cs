@@ -26,5 +26,10 @@ namespace Czech
         {
             fontDialog1.ShowDialog();
         }
+
+        private void printPreviewControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

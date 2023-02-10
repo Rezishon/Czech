@@ -30,7 +30,7 @@
         {
             this.txtWidth = new System.Windows.Forms.TextBox();
             this.lblHeight = new System.Windows.Forms.Label();
-            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtLength = new System.Windows.Forms.TextBox();
             this.lblWidth = new System.Windows.Forms.Label();
             this.btnSaveToFile = new System.Windows.Forms.Button();
             this.btnBackward = new System.Windows.Forms.Button();
@@ -56,14 +56,14 @@
             this.lblHeight.TabIndex = 5;
             this.lblHeight.Text = ": طول";
             // 
-            // txtHeight
+            // txtLength
             // 
-            this.txtHeight.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtHeight.Location = new System.Drawing.Point(229, 11);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(124, 36);
-            this.txtHeight.TabIndex = 1;
+            this.txtLength.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtLength.Location = new System.Drawing.Point(229, 11);
+            this.txtLength.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLength.Name = "txtLength";
+            this.txtLength.Size = new System.Drawing.Size(124, 36);
+            this.txtLength.TabIndex = 1;
             // 
             // lblWidth
             // 
@@ -107,7 +107,7 @@
             this.ClientSize = new System.Drawing.Size(445, 111);
             this.Controls.Add(this.btnBackward);
             this.Controls.Add(this.btnSaveToFile);
-            this.Controls.Add(this.txtHeight);
+            this.Controls.Add(this.txtLength);
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.txtWidth);
             this.Controls.Add(this.lblHeight);
@@ -126,7 +126,7 @@
 
         private System.Windows.Forms.TextBox txtWidth;
         private System.Windows.Forms.Label lblHeight;
-        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Button btnSaveToFile;
         private System.Windows.Forms.Button btnBackward;
