@@ -14,12 +14,44 @@ namespace Czech
 
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
         static string[] file_text = new string[22];
-        static PrintDocument document = new PrintDocument();
+        static public PrintDocument document = new PrintDocument();
         static string image_path = string.Empty;
         static Image czech_image = null;
         static PrintDialog PrintDialog1 = new PrintDialog();
         static PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
 
+        public PrintDocument Document 
+        {
+            set { document = value; }
+            get { return document; }
+        }
+
+        public static Dictionary<string, int> File_lines_list = new Dictionary<string, int>()
+        {
+            {"Length", 0},
+            {"Width", 1},
+            {"DateInNum_X", 2},
+            {"DateInNum_Y", 3},
+            {"DateInNum_Font", 4},
+            {"DateInWord_X", 5},
+            {"DateInWord_Y", 6},
+            {"DateInWord_Font",7 },
+            {"DateInWord_Enable", 8 },
+            {"MoneyInWord_X", 9},
+            {"MoneyInWord_Y", 10},
+            {"MoneyInWord_Font", 11},
+            {"For_X", 12},
+            {"For_Y", 13},
+            {"For_Font", 14},
+            {"NationalCode_X", 15},
+            {"NationalCode_Y", 16},
+            {"NationalCode_Font", 17},
+            {"NationalCode_Enable", 18},
+            {"MoneyInNum_X", 19},
+            {"MoneyInNum_Y", 20},
+            {"MoneyInNum_Font", 21}
+        };
+        
         static string Date_ = string.Empty;
         static string Money_ = string.Empty;
         static string For_  = string.Empty;
@@ -70,6 +102,12 @@ namespace Czech
             string text = "In document_PrintPage method.\nIn document_PrintPage method. 2";
             Font printFont = new Font("Arial", 35, FontStyle.Regular);
         }
+
+        public Dictionary<string, int> File_List
+        {
+            get { return File_lines_list; }
+        }
+
 
         #region First Page Date
 
@@ -130,18 +168,15 @@ namespace Czech
             if (File.Exists(File_Path) == false)
             {
                 File.WriteAllText(File_Path, "");
-                SaveTextFile("899", 0);
-                SaveTextFile("444", 1);
-                SaveTextFile("true", 8);
-                SaveTextFile("true", 18);
-
+                SaveTextFile("899", File_List["Lenght"]);
+                SaveTextFile("444", File_List["Width"]);
                 pageLoad();
             }
             else
             {
                 File_Text = File.ReadAllLines(File_Path);
-                PageHeight = File_Text[0];
-                PageWidth = File_Text[1];
+                PageHeight = File_Text[File_List["Length"]];
+                PageWidth = File_Text[File_List["Width"]];
                 image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
                 czech_image = Image.FromFile(image_path);
             }
@@ -149,8 +184,10 @@ namespace Czech
 
         public void page_setting()
         {
-            document.DefaultPageSettings.Landscape = true;
-            document.DefaultPageSettings.PaperSize.RawKind = 11;
+            //document.DefaultPageSettings.Landscape = true;
+            //document.DefaultPageSettings.PaperSize.RawKind = 0;
+            //document.DefaultPageSettings.PaperSize.Width = Convert.ToInt32(PageWidth);
+            //document.DefaultPageSettings.PaperSize.Height = Convert.ToInt32(PageHeight);
         }
 
         #endregion
@@ -163,43 +200,43 @@ namespace Czech
 
         #endregion
 
-        #region Print
+        #region Print *
 
-        public void btnPrint()
-        {
-            PrintDialog1.AllowSomePages = true;
-            PrintDialog1.Document = document;
-            PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
-                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
-                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
+        //public void btnPrint(System.Object sender, System.EventArgs e)
+        //{
+        //    PrintDialog1.AllowSomePages = true;
+        //    PrintDialog1.Document = document;
+        //    PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+        //    MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
+        //        $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
+        //        $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
 
-            DialogResult result = PrintDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                printPreviewDialog1.Document = document;
-                printPreviewDialog1.ShowDialog();
-            }
-            
-        }
+        //    DialogResult result = PrintDialog1.ShowDialog();
+        //    if (result == DialogResult.OK)
+        //    {
+        //        printPreviewDialog1.Document = document;
+        //        printPreviewDialog1.ShowDialog();
+        //    }
 
-        private void document_PrintPage(PrintPageEventArgs e)
-        {
-            try
-            {
-                // lines 43, 44 | should change and replace in page_value()
-                string text = "In document_PrintPage method.\nIn document_PrintPage method. 2\nIn document_PrintPage method. 3";
-                Font printFont = new Font("Arial", 15, FontStyle.Regular);
+        //}
 
-                // Error
-                e.Graphics.DrawImage(czech_image, 0, 0);
-                e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred printing the file - " + ex.Message);
-            }
-        }
+        //private void document_PrintPage(PrintPageEventArgs e)
+        //{
+        //    try
+        //    {
+        //        // lines 43, 44 | should change and replace in page_value()
+        //        string text = "In document_PrintPage method.\nIn document_PrintPage method. 2\nIn document_PrintPage method. 3";
+        //        Font printFont = new Font("Arial", 15, FontStyle.Regular);
+
+        //        // Error
+        //        e.Graphics.DrawImage(czech_image, 0, 0);
+        //        e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An error occurred printing the file - " + ex.Message);
+        //    }
+        //}
 
         #endregion
 

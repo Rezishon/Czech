@@ -18,25 +18,28 @@ namespace Czech
         {
             InitializeComponent();
         }
-        //page items
+
         private void Menu_Load(object sender, EventArgs e)
         {
             publicClass.pageLoad();
             publicClass.page_setting();
+            this.document = publicClass.Document;
         }
+
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            // make a new form is wrong should use pointers to show and close that form
             Form1 form1 = new Form1();
             this.Close();
             form1.Show();
         }
+
         private void btnTextSetting_Click(object sender, EventArgs e)
         {
             Text_Setting text_Setting = new Text_Setting();
             text_Setting.Show();
             this.Close();
         }
+
         private void btnPageSetting_Click(object sender, EventArgs e)
         {
             Page_Setting page_setting = new Page_Setting();
@@ -44,13 +47,24 @@ namespace Czech
             this.Close();
         }
 
-        //page printer button
         private void btnPrint_Click(System.Object sender, System.EventArgs e)
         {
-            publicClass.btnPrint();
+            publicClass.page_setting();
+            PrintDialog1.AllowSomePages = true;
+            PrintDialog1.Document = document;
+            PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
+                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
+                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
+
+            DialogResult result = PrintDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printPreviewDialog1.Document = document;
+                printPreviewDialog1.ShowDialog();
+            }
         }
 
-        // Page Class:
         private void document_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
