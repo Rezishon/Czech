@@ -181,11 +181,29 @@ namespace Czech
 
         public void page_setting()
         {
-            document.DefaultPageSettings.PaperSize = new PaperSize("Custom", Convert.ToInt32(PageWidth), Convert.ToInt32(PageHeight));
+            pageLoad();
+            document.DefaultPageSettings.PaperSize = new PaperSize("Custom", Convert.ToInt32(file_text[File_List["Width"]]), Convert.ToInt32(file_text[File_List["Length"]]));
             document.DefaultPageSettings.Landscape = true;
-            MessageBox.Show($"{document.DefaultPageSettings.PaperSize.Kind.ToString()}," +
-                $"{document.DefaultPageSettings.PaperSize.Width.ToString()}," +
-                $"{document.DefaultPageSettings.PaperSize.Height.ToString()}");
+            document.PrintPage += new PrintPageEventHandler(document_PrintPage);
+        }
+
+        public void document_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            try
+            {
+                string text = "1 2 3 4 5 6 7 8 9 9 9 9 9 9";
+                Font printFont = new Font("Arial", 14, FontStyle.Regular);
+
+                Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                Czech_Image = Image.FromFile(Image_path);
+
+                e.Graphics.DrawImage(Czech_Image, 0, 0);
+                e.Graphics.DrawString(text, printFont, Brushes.Black, 43, 222);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred printing the file - " + ex.Message);
+            }
         }
 
         #endregion
@@ -286,6 +304,58 @@ namespace Czech
             }
             return e;
         }
+
+        #endregion
+
+        #region Convert
+
+
+        #region Milimetr String To Inch String
+
+        //MessageBox.Show(inch_To_100(string_To_Double("170")).ToString());
+
+        public double string_To_Double(string str)
+        {
+            double inch = Convert.ToInt32(str) / 25.4;
+            return inch;
+        }
+        public int inch_To_100(double D)
+        {
+            int Inch = Convert.ToInt32(D * 100);
+            return Inch;
+        }
+
+        #endregion
+
+        #region Inch String To Milimeter String 
+
+        public double string_To_Double_X(string str)
+        {
+            double inch = Convert.ToInt32(str) * 25.4;
+            return inch;
+        }
+        public int inch_To_100_X(double D)
+        {
+            int Inch = Convert.ToInt32(D / 100);
+            return Inch;
+        }
+
+
+        #endregion
+
+        #region Date to Word
+
+        #endregion
+
+        #region Money To Word
+
+        #endregion
+
+        #region Money To Print_Money
+
+        #endregion
+
+
 
         #endregion
 

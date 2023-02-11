@@ -24,7 +24,10 @@ namespace Czech
             publicClass.pageLoad();
             publicClass.page_setting();
             this.document = publicClass.Document;
+            
         }
+
+        #region Page Buttons
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
@@ -47,20 +50,22 @@ namespace Czech
             this.Close();
         }
 
+
+
+        #endregion
+
         private void btnPrint_Click(System.Object sender, System.EventArgs e)
         {
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
-            PrintDialog1.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-            MessageBox.Show($"width : {document.DefaultPageSettings.PaperSize.Width}" +
-                $"\nhiegth: {document.DefaultPageSettings.PaperSize.Height}" +
-                $"\nkind: {document.DefaultPageSettings.PaperSize.Kind}");
+            //PrintDialog1.PrinterSettings.PrinterName = default;
 
             DialogResult result = PrintDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
                 printPreviewDialog1.Document = document;
+               
                 printPreviewDialog1.ShowDialog();
             }
         }
@@ -74,7 +79,7 @@ namespace Czech
                 Font printFont = new Font("Arial", 15, FontStyle.Regular);
 
                 // Error
-                //e.Graphics.DrawImage(czech_image, 0, 0);========================================================
+                e.Graphics.DrawImage(publicClass.Czech_Image, 0, 0);
                 e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
             }
             catch (Exception ex)
