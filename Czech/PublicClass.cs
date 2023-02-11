@@ -15,8 +15,8 @@ namespace Czech
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
         static string[] file_text = new string[22];
         static public PrintDocument document = new PrintDocument();
-        static string image_path = string.Empty;
-        static Image czech_image = null;
+        static public string image_path;
+        static public Image czech_image;
         static PrintDialog PrintDialog1 = new PrintDialog();
         static PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
 
@@ -24,6 +24,16 @@ namespace Czech
         {
             set { document = value; }
             get { return document; }
+        }
+        public string Image_path 
+        { 
+            set { image_path = value; }
+            get { return image_path;}
+        }
+        public Image Czech_Image 
+        { 
+            set { czech_image = value; }
+            get { return czech_image;}
         }
 
         public static Dictionary<string, int> File_lines_list = new Dictionary<string, int>()
@@ -52,10 +62,10 @@ namespace Czech
             {"MoneyInNum_Font", 21}
         };
         
-        static string Date_ = string.Empty;
-        static string Money_ = string.Empty;
-        static string For_  = string.Empty;
-        static string NationalCode_ = string.Empty;
+        static string Date_;
+        static string Money_;
+        static string For_;
+        static string NationalCode_;
 
         static private string pageWidth_;
         static private string pageHeight_;
@@ -165,21 +175,7 @@ namespace Czech
 
         public void pageLoad()
         {
-            if (File.Exists(File_Path) == false)
-            {
-                File.WriteAllText(File_Path, "");
-                SaveTextFile("899", File_List["Lenght"]);
-                SaveTextFile("444", File_List["Width"]);
-                pageLoad();
-            }
-            else
-            {
-                File_Text = File.ReadAllLines(File_Path);
-                PageHeight = File_Text[File_List["Length"]];
-                PageWidth = File_Text[File_List["Width"]];
-                image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
-                czech_image = Image.FromFile(image_path);
-            }
+            File_Text = File.ReadAllLines(File_Path);
         }
 
         public void page_setting()

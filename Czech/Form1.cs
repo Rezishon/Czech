@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -60,8 +61,19 @@ namespace Czech
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists(publicClass.File_Path) == false)
+            {
+                File.WriteAllText(publicClass.File_Path, "");
+                publicClass.SaveTextFile("899", publicClass.File_List["Length"]);
+                publicClass.SaveTextFile("444", publicClass.File_List["Width"]);
+                publicClass.SaveTextFile("true", publicClass.File_List["DateInWord_Enable"]);
+                publicClass.SaveTextFile("true", publicClass.File_List["NationalCode_Enable"]);
+            }
             publicClass.pageLoad();
+            publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+            publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
             dateTimePicker.Value = DateTime.Now;
+
         }
     }
 }

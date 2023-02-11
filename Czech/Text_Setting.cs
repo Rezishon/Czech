@@ -13,6 +13,8 @@ namespace Czech
     {
         PublicClass publicClass = new PublicClass();
         Font font = null;
+        string[] text;
+        Dictionary<string, int> list;
 
         public Text_Setting()
         {
@@ -26,38 +28,34 @@ namespace Czech
             this.Close();
         }
 
-        private void btnFont1_Click(object sender, EventArgs e)
-        {
-            Font_set("DateInNum_Font");
-        }
 
         public void Font_set(string str)
         {
             fontDialog1.ShowDialog();
             font = fontDialog1.Font;
             MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
-            //publicClass.SaveTextFile($"{font.Name},{font.Style},{font.Size}", publicClass.File_List[str]);
-
+            publicClass.SaveTextFile($"{font.Name},{font.Style},{font.Size}", list[str]);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             #region Saves
 
-            publicClass.SaveTextFile(txtDateInNum1.Text, publicClass.File_List["DateInNum_X"]);
-            publicClass.SaveTextFile(txtDateInNum2.Text, publicClass.File_List["DateInNum_Y"]);
-            publicClass.SaveTextFile(txtDateInWord1.Text, publicClass.File_List["DateInWord_X"]);
-            publicClass.SaveTextFile(txtDateInWord2.Text, publicClass.File_List["DateInWord_Y"]);
-            publicClass.SaveTextFile(txtMoneyInWord1.Text, publicClass.File_List["MoneyInWord_X"]);
-            publicClass.SaveTextFile(txtMoneyInWord2.Text, publicClass.File_List["MoneyInWord_Y"]);
-            publicClass.SaveTextFile(txtFor1.Text, publicClass.File_List["For_X"]);
-            publicClass.SaveTextFile(txtFor2.Text, publicClass.File_List["For_Y"]);
-            publicClass.SaveTextFile(txtNationalCode1.Text, publicClass.File_List["NationalCode_X"]);
-            publicClass.SaveTextFile(txtNationalCode2.Text, publicClass.File_List["NationalCode_Y"]);
-            publicClass.SaveTextFile(txtMoneyInNum1.Text, publicClass.File_List["MoneyInNum_X"]);
-            publicClass.SaveTextFile(txtMoneyInNum2.Text, publicClass.File_List["MoneyInNum_Y"]);
-            publicClass.SaveTextFile(checkBox1.Checked.ToString(), publicClass.File_List["DateInWord_Enable"]);
-            publicClass.SaveTextFile(checkBox2.Checked.ToString(), publicClass.File_List["NationalCode_Enable"]);
+            publicClass.SaveTextFile(txtDateInNum1.Text, list["DateInNum_X"]);
+            publicClass.SaveTextFile(txtDateInNum2.Text, list["DateInNum_Y"]);
+            publicClass.SaveTextFile(txtDateInWord1.Text, list["DateInWord_X"]);
+            publicClass.SaveTextFile(txtDateInWord2.Text, list["DateInWord_Y"]);
+            publicClass.SaveTextFile(txtMoneyInWord1.Text, list["MoneyInWord_X"]);
+            publicClass.SaveTextFile(txtMoneyInWord2.Text, list["MoneyInWord_Y"]);
+            publicClass.SaveTextFile(txtFor1.Text, list["For_X"]);
+            publicClass.SaveTextFile(txtFor2.Text, list["For_Y"]);
+            publicClass.SaveTextFile(txtNationalCode1.Text, list["NationalCode_X"]);
+            publicClass.SaveTextFile(txtNationalCode2.Text, list["NationalCode_Y"]);
+            publicClass.SaveTextFile(txtMoneyInNum1.Text, list["MoneyInNum_X"]);
+            publicClass.SaveTextFile(txtMoneyInNum2.Text, list["MoneyInNum_Y"]);
+
+            publicClass.SaveTextFile(checkBox1.Checked.ToString(), list["DateInWord_Enable"]);
+            publicClass.SaveTextFile(checkBox2.Checked.ToString(), list["NationalCode_Enable"]);
 
             #endregion
 
@@ -71,33 +69,38 @@ namespace Czech
         }
 
         private void Text_Setting_Load(object sender, EventArgs e)
-        { // کند
+        {
+
+            text = publicClass.File_Text;
+            list = publicClass.File_List;
+
             #region CheckBoxs
 
-            checkBox1.Checked = Convert.ToBoolean(publicClass.File_Text[publicClass.File_List["DateInWord_Enable"]]);
-            checkBox2.Checked = Convert.ToBoolean(publicClass.File_Text[publicClass.File_List["NationalCode_Enable"]]);
+            checkBox1.Checked = Convert.ToBoolean(text[list["DateInWord_Enable"]]);
+            checkBox2.Checked = Convert.ToBoolean(text[list["NationalCode_Enable"]]);
 
             #endregion
 
             #region TextBoxs
 
-            txtDateInNum1.Text = publicClass.File_Text[publicClass.File_List["DateInNum_X"]];
-            txtDateInNum2.Text = publicClass.File_Text[publicClass.File_List["DateInNum_Y"]];
 
-            txtDateInWord1.Text = publicClass.File_Text[publicClass.File_List["DateInWord_X"]];
-            txtDateInWord2.Text = publicClass.File_Text[publicClass.File_List["DateInWord_Y"]];
+            txtDateInNum1.Text = text[list["DateInNum_X"]];
+            txtDateInNum2.Text = text[list["DateInNum_Y"]];
 
-            txtMoneyInWord1.Text = publicClass.File_Text[publicClass.File_List["MoneyInWord_X"]];
-            txtMoneyInWord2.Text = publicClass.File_Text[publicClass.File_List["MoneyInWord_Y"]];
+            txtDateInWord1.Text = text[list["DateInWord_X"]];
+            txtDateInWord2.Text = text[list["DateInWord_Y"]];
 
-            txtFor1.Text = publicClass.File_Text[publicClass.File_List["For_X"]];
-            txtFor2.Text = publicClass.File_Text[publicClass.File_List["For_Y"]];
+            txtMoneyInWord1.Text = text[list["MoneyInWord_X"]];
+            txtMoneyInWord2.Text = text[list["MoneyInWord_Y"]];
 
-            txtNationalCode1.Text = publicClass.File_Text[publicClass.File_List["NationalCode_X"]];
-            txtNationalCode2.Text = publicClass.File_Text[publicClass.File_List["NationalCode_Y"]];
+            txtFor1.Text = text[list["For_X"]];
+            txtFor2.Text = text[list["For_Y"]];
 
-            txtMoneyInNum1.Text = publicClass.File_Text[publicClass.File_List["MoneyInNum_X"]];
-            txtMoneyInNum2.Text = publicClass.File_Text[publicClass.File_List["MoneyInNum_Y"]];
+            txtNationalCode1.Text = text[list["NationalCode_X"]];
+            txtNationalCode2.Text = text[list["NationalCode_Y"]];
+
+            txtMoneyInNum1.Text = text[list["MoneyInNum_X"]];
+            txtMoneyInNum2.Text = text[list["MoneyInNum_Y"]];
 
             #endregion
 
@@ -143,6 +146,33 @@ namespace Czech
             }
         }
 
+        private void btnFont1_Click(object sender, EventArgs e)
+        {
+            Font_set("DateInNum_Font");
+        }
+        private void btnFont2_Click(object sender, EventArgs e)
+        {
+            Font_set("DateInWord_Font");
+        }
 
+        private void btnFont3_Click(object sender, EventArgs e)
+        {
+            Font_set("MoneyInWord_Font");
+        }
+
+        private void btnFont4_Click(object sender, EventArgs e)
+        {
+            Font_set("For_Font");
+        }
+
+        private void btnFont5_Click(object sender, EventArgs e)
+        {
+            Font_set("NationalCode_Font");
+        }
+
+        private void btnFont6_Click(object sender, EventArgs e)
+        {
+            Font_set("MoneyInNum_Font");
+        }
     }
 }
