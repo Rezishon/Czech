@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -180,10 +181,11 @@ namespace Czech
 
         public void page_setting()
         {
-            //document.DefaultPageSettings.Landscape = true;
-            //document.DefaultPageSettings.PaperSize.RawKind = 0;
-            //document.DefaultPageSettings.PaperSize.Width = Convert.ToInt32(PageWidth);
-            //document.DefaultPageSettings.PaperSize.Height = Convert.ToInt32(PageHeight);
+            document.DefaultPageSettings.PaperSize = new PaperSize("Custom", Convert.ToInt32(PageWidth), Convert.ToInt32(PageHeight));
+            document.DefaultPageSettings.Landscape = true;
+            MessageBox.Show($"{document.DefaultPageSettings.PaperSize.Kind.ToString()}," +
+                $"{document.DefaultPageSettings.PaperSize.Width.ToString()}," +
+                $"{document.DefaultPageSettings.PaperSize.Height.ToString()}");
         }
 
         #endregion

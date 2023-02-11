@@ -28,12 +28,11 @@ namespace Czech
             this.Close();
         }
 
-
         public void Font_set(string str)
         {
             fontDialog1.ShowDialog();
             font = fontDialog1.Font;
-            MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
+            //MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
             publicClass.SaveTextFile($"{font.Name},{font.Style},{font.Size}", list[str]);
         }
 
@@ -70,7 +69,6 @@ namespace Czech
 
         private void Text_Setting_Load(object sender, EventArgs e)
         {
-
             text = publicClass.File_Text;
             list = publicClass.File_List;
 
@@ -106,7 +104,9 @@ namespace Czech
 
             #region Print Preview Control
 
+            publicClass.page_setting();
             pPC.Document = publicClass.Document;
+            
 
             #endregion
 

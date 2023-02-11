@@ -61,15 +61,19 @@ namespace Czech
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Dictionary<string, int> list;
+            list = publicClass.File_List;
             if (File.Exists(publicClass.File_Path) == false)
             {
                 File.WriteAllText(publicClass.File_Path, "");
-                publicClass.SaveTextFile("899", publicClass.File_List["Length"]);
-                publicClass.SaveTextFile("444", publicClass.File_List["Width"]);
-                publicClass.SaveTextFile("true", publicClass.File_List["DateInWord_Enable"]);
-                publicClass.SaveTextFile("true", publicClass.File_List["NationalCode_Enable"]);
+                publicClass.SaveTextFile("899", list["Length"]);
+                publicClass.SaveTextFile("444", list["Width"]);
+                publicClass.SaveTextFile("true", list["DateInWord_Enable"]);
+                publicClass.SaveTextFile("true", list["NationalCode_Enable"]);
             }
             publicClass.pageLoad();
+            publicClass.PageHeight = publicClass.File_Text[list["Length"]];
+            publicClass.PageWidth = publicClass.File_Text[list["Width"]];
             publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
             publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
             dateTimePicker.Value = DateTime.Now;
