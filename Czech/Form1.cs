@@ -126,20 +126,12 @@ namespace Czech
             if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
             {
                 DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
-                if (dialog == DialogResult.Retry)
-                {
-                    Form1_Load(sender, e);
-                }
+                if (dialog == DialogResult.Retry) Form1_Load(sender, e);
             }
-
             if (publicClass.Money != string.Empty) txtMount.Text = publicClass.Money;
             DateTime valu = DateTime.Parse("01 / 01 / 0001 12:00:00 ق.ظ");
-            if (publicClass.val == valu)
-            {
-                publicClass.val = DateTime.Today;
-            }
+            if (publicClass.val == valu) publicClass.val = DateTime.Today;
             dateTimePicker.Value = publicClass.val;
-
 
             Dictionary<string, int> list;
             list = publicClass.File_List;
@@ -151,12 +143,19 @@ namespace Czech
                 publicClass.SaveTextFile("true", list["DateInWord_Enable"]);
                 publicClass.SaveTextFile("true", list["NationalCode_Enable"]);
             }
-            publicClass.pageLoad();
-            publicClass.PageHeight = publicClass.File_Text[list["Length"]];
-            publicClass.PageWidth = publicClass.File_Text[list["Width"]];
-            publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
-            publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
-
+            try
+            {
+                publicClass.pageLoad();
+                publicClass.PageHeight = publicClass.File_Text[list["Length"]];
+                publicClass.PageWidth = publicClass.File_Text[list["Width"]];
+                publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+                Application.Exit();
+            }
         }
 
     }
