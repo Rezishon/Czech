@@ -137,10 +137,28 @@ namespace Czech
             if (File.Exists(publicClass.File_Path) == false)
             {
                 File.WriteAllText(publicClass.File_Path, "");
-                publicClass.SaveTextFile("899", list["Length"]);
-                publicClass.SaveTextFile("444", list["Width"]);
+                publicClass.SaveTextFile("669", list["Length"]);
+                publicClass.SaveTextFile("335", list["Width"]);
+                publicClass.SaveTextFile("0", list["DateInNum_X"]);
+                publicClass.SaveTextFile("5", list["DateInNum_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["DateInNum_Font"]);
+                publicClass.SaveTextFile("0", list["DateInWord_X"]);
+                publicClass.SaveTextFile("25", list["DateInWord_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["DateInWord_Font"]);
                 publicClass.SaveTextFile("true", list["DateInWord_Enable"]);
+                publicClass.SaveTextFile("0", list["MoneyInWord_X"]);
+                publicClass.SaveTextFile("45", list["MoneyInWord_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["MoneyInWord_Font"]);
+                publicClass.SaveTextFile("0", list["For_X"]);
+                publicClass.SaveTextFile("65", list["For_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["For_Font"]);
+                publicClass.SaveTextFile("0", list["NationalCode_X"]);
+                publicClass.SaveTextFile("85", list["NationalCode_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["NationalCode_Font"]);
                 publicClass.SaveTextFile("true", list["NationalCode_Enable"]);
+                publicClass.SaveTextFile("0", list["MoneyInNum_X"]);
+                publicClass.SaveTextFile("105", list["MoneyInNum_Y"]);
+                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["MoneyInNum_Font"]);
             }
             try
             {

@@ -72,17 +72,17 @@ namespace Czech
 
             #endregion
 
-            #region Fonts
-
-            
-
-            #endregion
-
             MessageBox.Show("ذخیره شد", "Save");
+
+            Text_Setting text_Setting = new Text_Setting();
+            text_Setting.Show();
+            this.Close();
+
         }
 
         private void Text_Setting_Load(object sender, EventArgs e)
         {
+            publicClass.pageLoad();
             text = publicClass.File_Text;
             list = publicClass.File_List;
 

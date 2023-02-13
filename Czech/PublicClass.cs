@@ -266,14 +266,25 @@ namespace Czech
         {
             try
             {
-                string[] strings = { Date_word, Date_Print, Money_word, For, NationalCode, Money_Print };
-                Font printFont = new Font("Arial", 14, FontStyle.Regular);
+                Font[] fonts = { Line1font, Line2font, Line3font, Line4font, Line5font, Line6font };
+                string[] strings = { Date_word, "DateInWord_X", "DateInWord_Y",
+                    Date_Print,"DateInNum_X","DateInNum_Y", 
+                    Money_word,"MoneyInWord_X","MoneyInWord_Y", 
+                    For,"For_X","For_Y", 
+                    NationalCode,"NationalCode_X","NationalCode_Y", 
+                    Money_Print,"MoneyInNum_X","MoneyInNum_Y" };
 
                 Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
                 Czech_Image = Image.FromFile(Image_path);
-
                 e.Graphics.DrawImage(Czech_Image, 0, 0);
-                //e.Graphics.DrawString(text, printFont, Brushes.Black, 43, 222);
+                pageLoad();
+                int j = 0;
+                for (int i = 0; i < 18; i+=3)
+                {
+                    e.Graphics.DrawString(strings[i], fonts[j], Brushes.Black, float.Parse(File_Text[File_List[strings[i+1]]]), float.Parse(File_Text[File_List[strings[i + 2]]]));
+                    j++;
+                }
+
             }
             catch (Exception ex)
             {
