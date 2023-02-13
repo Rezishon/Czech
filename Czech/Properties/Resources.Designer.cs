@@ -89,5 +89,35 @@ namespace Czech.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_4 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_41 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-41", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_42 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

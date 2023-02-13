@@ -119,6 +119,11 @@ namespace Czech
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Load_Page load_Page = new Load_Page();
+            load_Page.Show();
+            System.Threading.Thread.Sleep(5000);
+            load_Page.Close();
+
             if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
             {
                 DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);

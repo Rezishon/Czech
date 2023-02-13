@@ -14,7 +14,6 @@ namespace Czech
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //PublicClass publicClass = new PublicClass();
             Application.Run(new Form1());
         }
     }
