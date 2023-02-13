@@ -123,6 +123,15 @@ namespace Czech
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
+            {
+                DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                if (dialog == DialogResult.Retry)
+                {
+                    Form1_Load(sender, e);
+                }
+            }
+
             if (publicClass.Money != string.Empty) txtMount.Text = publicClass.Money;
             DateTime valu = DateTime.Parse("01 / 01 / 0001 12:00:00 ق.ظ");
             if (publicClass.val == valu)
