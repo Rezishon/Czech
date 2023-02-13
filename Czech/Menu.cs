@@ -59,7 +59,6 @@ namespace Czech
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
-            //PrintDialog1.PrinterSettings.PrinterName = default;
 
             DialogResult result = PrintDialog1.ShowDialog();
             if (result == DialogResult.OK)

@@ -281,7 +281,9 @@ namespace Czech
                 pageLoad();
                 if (bool.Parse(File_Text[File_List["DateInWord_Enable"]]) == false) strings[0] = "";
                 if (bool.Parse(File_Text[File_List["NationalCode_Enable"]]) == false) strings[12] = "";
-                
+                if (bool.Parse(File_Text[File_List["Date_Enable"]]) == false) strings[3] = Date;
+
+
                 int j = 0;
                 for (int i = 0; i < 18; i+=3)
                 {
