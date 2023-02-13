@@ -85,11 +85,9 @@ namespace Czech
 
             #endregion
 
-
-
-            if (publicClass.NationalCode.Length != 10)
+            if (String.IsNullOrEmpty(txtFor.Text))
             {
-                MessageBox.Show("کد یا شماره ملی باید 10 رقم باشد");
+                MessageBox.Show("لطفا قسمت در وجه را پر کنید");
             }
             else
             {
@@ -97,8 +95,6 @@ namespace Czech
                 this.Hide();
                 menu.Show();
             }
-
-
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
