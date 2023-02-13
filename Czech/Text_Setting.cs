@@ -31,10 +31,23 @@ namespace Czech
 
         public void Font_set(string str)
         {
+            fontDialog1.Font = Font_Load(str);
             fontDialog1.ShowDialog();
             font = fontDialog1.Font;
             //MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
-            publicClass.SaveTextFile($"{font.Name},{font.Style},{font.Size}", list[str]);
+            publicClass.SaveTextFile($"{font.Name},{font.Size},{font.Style}", list[str]);
+        }
+        public Font Font_Load(string str)
+        {
+            Font fo;
+            publicClass.pageLoad();
+            string[] strings;
+            strings = publicClass.File_Text[list[str]].Split(',');
+            FontStyle style = new FontStyle();
+            fo = new Font(strings[0], float.Parse(strings[1]), (FontStyle)Enum.Parse(typeof(FontStyle), strings[2]));
+            //MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
+            //publicClass.SaveTextFile($"{font.Name},{font.Size},{font.Style}", list[str]);
+            return fo;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -114,6 +127,17 @@ namespace Czech
 
             #endregion
 
+            #region Fonts
+
+            publicClass.Line1font = Font_Load("DateInNum_Font");
+            publicClass.Line2font = Font_Load("DateInWord_Font");
+            publicClass.Line3font = Font_Load("MoneyInWord_Font");
+            publicClass.Line4font = Font_Load("For_Font");
+            publicClass.Line5font = Font_Load("NationalCode_Font");
+            publicClass.Line6font = Font_Load("MoneyInNum_Font");
+
+            #endregion
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -153,30 +177,43 @@ namespace Czech
         private void btnFont1_Click(object sender, EventArgs e)
         {
             Font_set("DateInNum_Font");
+
+            publicClass.Line1font = Font_Load("DateInNum_Font");
         }
+
         private void btnFont2_Click(object sender, EventArgs e)
         {
             Font_set("DateInWord_Font");
+            publicClass.Line2font = Font_Load("DateInWord_Font");
+
         }
 
         private void btnFont3_Click(object sender, EventArgs e)
         {
             Font_set("MoneyInWord_Font");
+            publicClass.Line3font = Font_Load("MoneyInWord_Font");
+
         }
 
         private void btnFont4_Click(object sender, EventArgs e)
         {
             Font_set("For_Font");
+            publicClass.Line4font = Font_Load("For_Font");
+
         }
 
         private void btnFont5_Click(object sender, EventArgs e)
         {
             Font_set("NationalCode_Font");
+            publicClass.Line5font = Font_Load("NationalCode_Font");
+
         }
 
         private void btnFont6_Click(object sender, EventArgs e)
         {
             Font_set("MoneyInNum_Font");
+            publicClass.Line6font = Font_Load("MoneyInNum_Font");
+
         }
     }
 }

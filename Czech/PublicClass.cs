@@ -89,26 +89,62 @@ namespace Czech
         static private string line1X_;
         static private string line1Y_;
         static public Font line1Font;
+        public Font Line1font
+        {
+            set { line1Font = value; }
+            get { return line1Font; }
+        }
+
+
 
         static private string line2X_;
         static private string line2Y_;
         static private Font line2Font;
+        public Font Line2font
+        {
+            set { line2Font = value; }
+            get { return line2Font; }
+        }
 
         static private string line3X_;
         static private string line3Y_;
         static private Font line3Font;
+        public Font Line3font
+        {
+            set { line3Font = value; }
+            get { return line3Font; }
+        }
+
 
         static private string line4X_;
         static private string line4Y_;
         static private Font line4Font;
+        public Font Line4font
+        {
+            set { line4Font = value; }
+            get { return line4Font; }
+        }
+
 
         static private string line5X_;
         static private string line5Y_;
         static private Font line5Font;
+        public Font Line5font
+        {
+            set { line6Font = value; }
+            get { return line6Font; }
+        }
+
 
         static private string line6X_;
         static private string line6Y_;
         static private Font line6Font;
+        public Font Line6font
+        {
+            set { line6Font = value; }
+            get { return line6Font; }
+        }
+
 
         static private string line7X_;
         static private string line7Y_;
@@ -123,11 +159,11 @@ namespace Czech
 
         }
 
-        public void page_value(string L1, string L2, string L3, string L4, string L4_2, string L5)
-        {
-            string text = "In document_PrintPage method.\nIn document_PrintPage method. 2";
-            Font printFont = new Font("Arial", 35, FontStyle.Regular);
-        }
+        //public void page_value(string L1, string L2, string L3, string L4, string L4_2, string L5)
+        //{
+        //    string text = "In document_PrintPage method.\nIn document_PrintPage method. 2";
+        //    Font printFont = new Font("Arial", 35, FontStyle.Regular);
+        //}
 
         public Dictionary<string, int> File_List
         {
@@ -230,14 +266,14 @@ namespace Czech
         {
             try
             {
-                string text = "1 2 3 4 5 6 7 8 9 9 9 9 9 9";
+                string[] strings = { Date_word, Date_Print, Money_word, For, NationalCode, Money_Print };
                 Font printFont = new Font("Arial", 14, FontStyle.Regular);
 
                 Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
                 Czech_Image = Image.FromFile(Image_path);
 
                 e.Graphics.DrawImage(Czech_Image, 0, 0);
-                e.Graphics.DrawString(text, printFont, Brushes.Black, 43, 222);
+                //e.Graphics.DrawString(text, printFont, Brushes.Black, 43, 222);
             }
             catch (Exception ex)
             {

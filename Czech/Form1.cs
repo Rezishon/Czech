@@ -125,6 +125,9 @@ namespace Czech
                 if (dialog == DialogResult.Retry) Form1_Load(sender, e);
             }
             if (publicClass.Money != string.Empty) txtMount.Text = publicClass.Money;
+            if (publicClass.For != string.Empty) txtFor.Text = publicClass.For;
+            if (publicClass.NationalCode != string.Empty) txtCode.Text = publicClass.NationalCode;
+
             DateTime valu = DateTime.Parse("01 / 01 / 0001 12:00:00 ق.ظ");
             if (publicClass.val == valu) publicClass.val = DateTime.Today;
             dateTimePicker.Value = publicClass.val;
