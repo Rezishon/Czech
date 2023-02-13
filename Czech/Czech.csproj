@@ -114,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Line List.txt" />
+    <None Include="Resources\dsfsdf2.jpg" />
+    <None Include="Resources\dsfsdf1.jpg" />
+    <None Include="Resources\dsfsdf.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

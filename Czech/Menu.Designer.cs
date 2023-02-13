@@ -40,10 +40,14 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(16, 15);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.BackgroundImage = global::Czech.Properties.Resources.dsfsdf1;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Location = new System.Drawing.Point(12, 12);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(107, 43);
+            this.btnPrint.Size = new System.Drawing.Size(80, 35);
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "چاپ";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -51,10 +55,14 @@
             // 
             // btnPageSetting
             // 
-            this.btnPageSetting.Location = new System.Drawing.Point(131, 15);
-            this.btnPageSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPageSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPageSetting.BackgroundImage")));
+            this.btnPageSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPageSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageSetting.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPageSetting.ForeColor = System.Drawing.Color.Black;
+            this.btnPageSetting.Location = new System.Drawing.Point(98, 12);
             this.btnPageSetting.Name = "btnPageSetting";
-            this.btnPageSetting.Size = new System.Drawing.Size(108, 43);
+            this.btnPageSetting.Size = new System.Drawing.Size(92, 35);
             this.btnPageSetting.TabIndex = 0;
             this.btnPageSetting.Text = "تنظیمات صفحه";
             this.btnPageSetting.UseVisualStyleBackColor = true;
@@ -62,10 +70,14 @@
             // 
             // btnTextSetting
             // 
-            this.btnTextSetting.Location = new System.Drawing.Point(247, 15);
-            this.btnTextSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTextSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTextSetting.BackgroundImage")));
+            this.btnTextSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTextSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTextSetting.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnTextSetting.ForeColor = System.Drawing.Color.Black;
+            this.btnTextSetting.Location = new System.Drawing.Point(196, 12);
             this.btnTextSetting.Name = "btnTextSetting";
-            this.btnTextSetting.Size = new System.Drawing.Size(116, 43);
+            this.btnTextSetting.Size = new System.Drawing.Size(87, 35);
             this.btnTextSetting.TabIndex = 0;
             this.btnTextSetting.Text = "تنظیمات متن";
             this.btnTextSetting.UseVisualStyleBackColor = true;
@@ -73,10 +85,14 @@
             // 
             // btnBackward
             // 
-            this.btnBackward.Location = new System.Drawing.Point(371, 15);
-            this.btnBackward.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBackward.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBackward.BackgroundImage")));
+            this.btnBackward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackward.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBackward.ForeColor = System.Drawing.Color.Black;
+            this.btnBackward.Location = new System.Drawing.Point(289, 12);
             this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(107, 43);
+            this.btnBackward.Size = new System.Drawing.Size(80, 35);
             this.btnBackward.TabIndex = 1;
             this.btnBackward.Text = "صفحه قبل";
             this.btnBackward.UseVisualStyleBackColor = true;
@@ -103,15 +119,17 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 70);
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::Czech.Properties.Resources.dsfsdf2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(381, 57);
             this.Controls.Add(this.btnBackward);
             this.Controls.Add(this.btnTextSetting);
             this.Controls.Add(this.btnPageSetting);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

@@ -175,6 +175,5 @@ namespace Czech
                 Application.Exit();
             }
         }
-
     }
 }
