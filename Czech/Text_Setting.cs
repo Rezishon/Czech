@@ -69,6 +69,7 @@ namespace Czech
 
             publicClass.SaveTextFile(checkBox1.Checked.ToString(), list["DateInWord_Enable"]);
             publicClass.SaveTextFile(checkBox2.Checked.ToString(), list["NationalCode_Enable"]);
+            publicClass.SaveTextFile(checkBoxDate.Checked.ToString(), list["Date_Enable"]);
 
             #endregion
 
@@ -90,6 +91,8 @@ namespace Czech
 
             checkBox1.Checked = Convert.ToBoolean(text[list["DateInWord_Enable"]]);
             checkBox2.Checked = Convert.ToBoolean(text[list["NationalCode_Enable"]]);
+            checkBoxDate.Checked = Convert.ToBoolean(text[list["Date_Enable"]]);
+
 
             #endregion
 
@@ -214,6 +217,14 @@ namespace Czech
             Font_set("MoneyInNum_Font");
             publicClass.Line6font = Font_Load("MoneyInNum_Font");
 
+        }
+
+        private void checkBoxDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDate.Checked == false)
+            {
+                //publicClass.Date_Print = 
+            }
         }
     }
 }

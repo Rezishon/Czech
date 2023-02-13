@@ -23,7 +23,7 @@ namespace Czech
         }
 
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
-        static string[] file_text = new string[22];
+        static string[] file_text = new string[23];
         static public PrintDocument document = new PrintDocument();
         static public string image_path;
         static public Image czech_image;
@@ -71,7 +71,8 @@ namespace Czech
             {"NationalCode_Enable", 18},
             {"MoneyInNum_X", 19},
             {"MoneyInNum_Y", 20},
-            {"MoneyInNum_Font", 21}
+            {"MoneyInNum_Font", 21},
+            {"Date_Enable", 22}
         };
         
         static string For_;
@@ -131,8 +132,8 @@ namespace Czech
         static private Font line5Font;
         public Font Line5font
         {
-            set { line6Font = value; }
-            get { return line6Font; }
+            set { line5Font = value; }
+            get { return line5Font; }
         }
 
 
@@ -278,9 +279,14 @@ namespace Czech
                 Czech_Image = Image.FromFile(Image_path);
                 e.Graphics.DrawImage(Czech_Image, 0, 0);
                 pageLoad();
+                if (bool.Parse(File_Text[File_List["DateInWord_Enable"]]) == false) strings[0] = "";
+                if (bool.Parse(File_Text[File_List["NationalCode_Enable"]]) == false) strings[12] = "";
+                
                 int j = 0;
                 for (int i = 0; i < 18; i+=3)
                 {
+                    
+
                     e.Graphics.DrawString(strings[i], fonts[j], Brushes.Black, float.Parse(File_Text[File_List[strings[i+1]]]), float.Parse(File_Text[File_List[strings[i + 2]]]));
                     j++;
                 }

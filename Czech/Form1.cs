@@ -159,6 +159,7 @@ namespace Czech
                 publicClass.SaveTextFile("0", list["MoneyInNum_X"]);
                 publicClass.SaveTextFile("105", list["MoneyInNum_Y"]);
                 publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["MoneyInNum_Font"]);
+                publicClass.SaveTextFile("true", list["Date_Enable"]);
             }
             try
             {
