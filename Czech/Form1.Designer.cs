@@ -37,6 +37,9 @@
             this.txtFor = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
+            this.radioRial = new System.Windows.Forms.RadioButton();
+            this.radioToman = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblDate
@@ -89,10 +92,12 @@
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker.Location = new System.Drawing.Point(13, 63);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker.MinDate = new System.DateTime(1971, 3, 21, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(135, 36);
+            this.dateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateTimePicker.Size = new System.Drawing.Size(141, 36);
             this.dateTimePicker.TabIndex = 0;
-            this.dateTimePicker.Value = new System.DateTime(2023, 2, 10, 16, 45, 30, 0);
+            this.dateTimePicker.Value = new System.DateTime(2023, 2, 10, 0, 0, 0, 0);
             // 
             // txtMount
             // 
@@ -136,11 +141,48 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
+            // radioRial
+            // 
+            this.radioRial.AutoSize = true;
+            this.radioRial.Location = new System.Drawing.Point(475, 160);
+            this.radioRial.Name = "radioRial";
+            this.radioRial.Size = new System.Drawing.Size(50, 20);
+            this.radioRial.TabIndex = 11;
+            this.radioRial.Text = "ریال";
+            this.radioRial.UseVisualStyleBackColor = true;
+            // 
+            // radioToman
+            // 
+            this.radioToman.AutoSize = true;
+            this.radioToman.Checked = true;
+            this.radioToman.Location = new System.Drawing.Point(475, 186);
+            this.radioToman.Name = "radioToman";
+            this.radioToman.Size = new System.Drawing.Size(56, 20);
+            this.radioToman.TabIndex = 12;
+            this.radioToman.TabStop = true;
+            this.radioToman.Text = "تومان";
+            this.radioToman.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(420, 160);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(49, 20);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "تمام";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 218);
+            this.ClientSize = new System.Drawing.Size(557, 218);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.radioToman);
+            this.Controls.Add(this.radioRial);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtFor);
             this.Controls.Add(this.txtCode);
@@ -173,6 +215,9 @@
         private System.Windows.Forms.TextBox txtFor;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.RadioButton radioRial;
+        private System.Windows.Forms.RadioButton radioToman;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

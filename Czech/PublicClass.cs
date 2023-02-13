@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
@@ -12,6 +14,13 @@ namespace Czech
     public class PublicClass
     {
         #region Attributes
+
+        static DateTime Val;
+        public DateTime val 
+        { 
+            set { Val = value; }
+            get { return Val; }
+        }
 
         static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
         static string[] file_text = new string[22];
@@ -36,6 +45,8 @@ namespace Czech
             set { czech_image = value; }
             get { return czech_image;}
         }
+
+        private static readonly List<string> ConvertedDigits = new List<string>();
 
         public static Dictionary<string, int> File_lines_list = new Dictionary<string, int>()
         {
@@ -63,10 +74,14 @@ namespace Czech
             {"MoneyInNum_Font", 21}
         };
         
-        static string Date_;
-        static string Money_;
         static string For_;
         static string NationalCode_;
+        static string Date_;
+        static string Date_Word;
+        static string Date_print;
+        static string Money_;
+        static string Money_Word;
+        static string Money_print;
 
         static private string pageWidth_;
         static private string pageHeight_;
@@ -122,16 +137,6 @@ namespace Czech
 
         #region First Page Date
 
-        public string Date 
-        {
-            set { Date_ = value; }
-            get { return Date_; }
-        }
-        public string Money
-        {
-            set { Money_ = value; }
-            get { return Money_; }
-        }
         public string For
         {
             set { For_ = value; }
@@ -141,6 +146,40 @@ namespace Czech
         {
             set { NationalCode_ = value; }
             get { return NationalCode_; }
+        }
+        public string Date 
+        {
+            set { Date_ = value; }
+            get { return Date_; }
+        }
+        public string Date_word
+        {
+            set { Date_Word = value; }
+            get { return Date_Word; }
+        }
+        public string Money
+        {
+            set 
+            {
+                Money_ = value; 
+            }
+            get { return Money_; }
+        }
+        public string Money_word
+        {
+            set { Money_Word = value; }
+            get { return Money_Word; }
+        }
+        public string Money_Print 
+        { 
+            set { Money_print = value; }
+            get { return Money_print; }
+        }
+
+        public string Date_Print 
+        { 
+            set { Date_print = value; }
+            get { return Date_print; }
         }
 
         #endregion
@@ -345,13 +384,373 @@ namespace Czech
 
         #region Date to Word
 
+        public void Date_To_Word(string str)
+        {
+            string[] strings = str.Split('/');
+            var digit = long.Parse(strings[2]);
+            Date_word = "";
+            Date_word = ToAlphabet(digit);
+
+            switch (int.Parse(strings[1]))
+            {
+                case 1:
+                    Date_word += " فروردین ";
+                    break;
+                case 2:
+                    Date_word += " اردیبهشت ";
+                    break;
+                case 3:
+                    Date_word += " خرداد ";
+                    break;
+                case 4:
+                    Date_word += " تیر ";
+                    break;
+                case 5:
+                    Date_word += " مرداد ";
+                    break;
+                case 6:
+                    Date_word += " شهریور ";
+                    break;
+                case 7:
+                    Date_word += " مهر ";
+                    break;
+                case 8:
+                    Date_word += " آبان ";
+                    break;
+                case 9:
+                    Date_word += " آذر ";
+                    break;
+                case 10:
+                    Date_word += " دی ";
+                    break;
+                case 11:
+                    Date_word += " بهمن ";
+                    break;
+                case 12:
+                    Date_word += " اسفند ";
+                    break;
+            }
+
+            digit = long.Parse(strings[0]);
+            Date_word += ToAlphabet(digit);
+        }
+
+        #endregion
+
+        #region Date to Print
+
+        public void C_PrintDate()
+        {
+            string[] strings = Date.Split('/');
+            string str;
+            foreach (string item in strings)
+            {
+                str = item;
+                for (int i = 1; i < str.Length; i += 2)
+                {
+                    str = str.Insert(i, " ");
+                }
+                Date_Print += " " + str;
+            }
+            
+        }
+
+
         #endregion
 
         #region Money To Word
 
+        public bool InputValidator(string str)
+        {
+            if (str.Length > 12)
+            {
+                MessageBox.Show(@"مبلغ وارد شده باید حداکثر 12 رقم باشد");
+                return false;
+            }
+            if (string.IsNullOrEmpty(str))
+            {
+                MessageBox.Show(@"شما باید مبلغی وارد کنید");
+                return false;
+            }
+
+            return true;
+        }
+
+        public string ToAlphabet(long digit)
+        {
+            ConvertedDigits.Clear();
+            GetDigitName(digit);
+            return string.Join(" ", ConvertedDigits.ToArray());
+        }
+
+        private static string GetDigitName(long digit)
+        {
+            var name = string.Empty;
+            var digitAsString = digit.ToString();
+            var digitLength = digitAsString.Length;
+            var digitParts = new string[digitLength];
+            var i = 0;
+
+            foreach (var ch in digitAsString)
+                digitParts[i++] = ch.ToString();
+
+            #region if numberLength equal with 1
+
+            if (digitLength == 1)
+            {
+                switch (digit)
+                {
+                    case 1:
+                        name = "یک";
+                        break;
+                    case 2:
+                        name = "دو";
+                        break;
+                    case 3:
+                        name = "سه";
+                        break;
+                    case 4:
+                        name = "چهار";
+                        break;
+                    case 5:
+                        name = "پنج";
+                        break;
+                    case 6:
+                        name = "شش";
+                        break;
+                    case 7:
+                        name = "هفت";
+                        break;
+                    case 8:
+                        name = "هشت";
+                        break;
+                    case 9:
+                        name = "نه";
+                        break;
+                }
+                // افزودن نام عدد به لیست
+                ConvertedDigits.Add(name);
+            }
+            #endregion
+
+            #region if numberLength equal with 2 and less then 20
+
+            else if (digitLength == 2 && digit < 20)
+            {
+                switch (digit)
+                {
+                    case 10:
+                        name = "ده";
+                        break;
+                    case 11:
+                        name = "یازده";
+                        break;
+                    case 12:
+                        name = "دوازده";
+                        break;
+                    case 13:
+                        name = "سیزده";
+                        break;
+                    case 14:
+                        name = "چهارده";
+                        break;
+                    case 15:
+                        name = "پانزده";
+                        break;
+                    case 16:
+                        name = "شانزده";
+                        break;
+                    case 17:
+                        name = "هفده";
+                        break;
+                    case 18:
+                        name = "هجده";
+                        break;
+                    case 19:
+                        name = "نوزده";
+                        break;
+                }
+
+                ConvertedDigits.Add(name);
+            }
+
+            #endregion
+
+            #region if numberLength equal with 2 and more then 20
+
+            else if (digitLength == 2 && digit >= 20)
+            {
+                // تبدیل عدد دو رقمی به دو قسمت. مثلا اگه 25 باشه پارت اول میشه 2 و پارت دو میشه 5
+                var part1 = Convert.ToInt32(digitParts[0]);
+                var part2 = Convert.ToInt32(digitParts[1]);
+
+                if (part2 == 0)
+                {
+                    switch (part1)
+                    {
+                        case 2:
+                            ConvertedDigits.Add("بیست");
+                            break;
+                        case 3:
+                            ConvertedDigits.Add("سی");
+                            break;
+                        case 4:
+                            ConvertedDigits.Add("چهل");
+                            break;
+                        case 5:
+                            ConvertedDigits.Add("پنجاه");
+                            break;
+                        case 6:
+                            ConvertedDigits.Add("شصت");
+                            break;
+                        case 7:
+                            ConvertedDigits.Add("هفتاد");
+                            break;
+                        case 8:
+                            ConvertedDigits.Add("هشتاد");
+                            break;
+                        case 9:
+                            ConvertedDigits.Add("نود");
+                            break;
+                    }
+                }
+                else if (digit % 10L != 0L)
+                {
+                    name += GetDigitName(part1 * 10L) + "و";
+                    // اضافه کردن نام عدد به لیست
+                    ConvertedDigits.Add(name);
+                    // فرخوانی دوباره متد GetDigitName با باقی مانده تقسیم عدد بر 10
+                    GetDigitName(digit % 10L);
+                }
+
+            }
+
+            #endregion
+
+            #region if numberLength equal with 3
+
+            else if (digitLength == 3)
+            {
+                // تبدیل عدد دو رقمی به سه قسمت. مثلا اگه 525 باشه پارت اول میشه 5 ، پارت دو میشه 2 و پارت سه میشه 5
+                var part1 = Convert.ToInt32(digitParts[0]);
+                var part2 = Convert.ToInt32(digitParts[1]);
+                var part3 = Convert.ToInt32(digitParts[2]);
+
+                if (part2 == 0 && part3 == 0)
+                {
+                    switch (part1)
+                    {
+                        case 1:
+                            ConvertedDigits.Add("یکصد");
+                            break;
+                        case 2:
+                            ConvertedDigits.Add("دویست");
+                            break;
+                        case 3:
+                            ConvertedDigits.Add("سیصد");
+                            break;
+                        case 4:
+                            ConvertedDigits.Add("چهارصد");
+                            break;
+                        case 5:
+                            ConvertedDigits.Add("پانصد");
+                            break;
+                        case 6:
+                            ConvertedDigits.Add("ششصد");
+                            break;
+                        case 7:
+                            ConvertedDigits.Add("هفصد");
+                            break;
+                        case 8:
+                            ConvertedDigits.Add("هشصد");
+                            break;
+                        case 9:
+                            ConvertedDigits.Add("نهصد");
+                            break;
+                    }
+                }
+                else if (digit % 100L != 0L)
+                {
+                    name += GetDigitName(part1 * 100L) + "و";
+                    ConvertedDigits.Add(name);
+
+                    GetDigitName(digit % 100L);
+                }
+            }
+
+            #endregion
+
+            #region if numberLength more then 3
+
+            else if (digitLength > 3)
+            {
+                switch (digitLength)
+                {
+                    case 4:
+                    case 5:
+                    case 6:
+                        GetDigitName(digit / 1000L);
+                        ConvertedDigits.Add("هزار");
+
+                        if (digit % 1000L != 0)
+                        {
+                            ConvertedDigits.Add("و");
+                            GetDigitName(digit % 1000L);
+                        }
+                        break;
+
+                    case 7:
+                    case 8:
+                    case 9:
+                        GetDigitName(digit / 1000000L);
+                        ConvertedDigits.Add("میلیون");
+
+                        if (digit % 1000000L != 0)
+                        {
+                            ConvertedDigits.Add("و");
+                            GetDigitName(digit % 1000000L);
+                        }
+                        break;
+
+                    case 10:
+                    case 11:
+                    case 12:
+                        GetDigitName(digit / 1000000000L);
+                        ConvertedDigits.Add("میلیارد");
+
+                        if (digit % 1000000000L != 0)
+                        {
+                            ConvertedDigits.Add("و");
+                            GetDigitName(digit % 1000000000L);
+                        }
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                ConvertedDigits.Add(name);
+            }
+
+            #endregion
+
+            return name;
+        }
+
         #endregion
 
         #region Money To Print_Money
+
+        public void C_PrintMoney()
+        {
+            string str = Money;
+            for (int i = 1; i < str.Length; i += 2)
+            {
+                str = str.Insert(i, " ");
+            }
+            Money_Print = str;
+        }
+
 
         #endregion
 
