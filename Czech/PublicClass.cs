@@ -259,7 +259,8 @@ namespace Czech
         {
             pageLoad();
             document.DefaultPageSettings.PaperSize = new PaperSize("Custom", Convert.ToInt32(file_text[File_List["Width"]]), Convert.ToInt32(file_text[File_List["Length"]]));
-            document.DefaultPageSettings.Landscape = true;
+            document.DefaultPageSettings.Landscape = false;
+            
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
         }
 

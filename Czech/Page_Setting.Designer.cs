@@ -42,9 +42,10 @@
             // txtWidth
             // 
             this.txtWidth.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtWidth.Location = new System.Drawing.Point(13, 9);
+            this.txtWidth.Location = new System.Drawing.Point(236, 12);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtWidth.Name = "txtWidth";
-            this.txtWidth.Size = new System.Drawing.Size(94, 30);
+            this.txtWidth.Size = new System.Drawing.Size(124, 36);
             this.txtWidth.TabIndex = 0;
             this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
             // 
@@ -53,18 +54,20 @@
             this.lblHeight.AutoSize = true;
             this.lblHeight.BackColor = System.Drawing.Color.Transparent;
             this.lblHeight.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblHeight.Location = new System.Drawing.Point(273, 6);
+            this.lblHeight.Location = new System.Drawing.Point(362, 8);
+            this.lblHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(57, 33);
+            this.lblHeight.Size = new System.Drawing.Size(70, 42);
             this.lblHeight.TabIndex = 5;
             this.lblHeight.Text = ": طول";
             // 
             // txtLength
             // 
             this.txtLength.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtLength.Location = new System.Drawing.Point(177, 9);
+            this.txtLength.Location = new System.Drawing.Point(13, 12);
+            this.txtLength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLength.Name = "txtLength";
-            this.txtLength.Size = new System.Drawing.Size(94, 30);
+            this.txtLength.Size = new System.Drawing.Size(124, 36);
             this.txtLength.TabIndex = 1;
             this.txtLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLength_KeyPress);
             // 
@@ -73,9 +76,10 @@
             this.lblWidth.AutoSize = true;
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("2  Titr", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblWidth.Location = new System.Drawing.Point(109, 6);
+            this.lblWidth.Location = new System.Drawing.Point(139, 8);
+            this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(62, 33);
+            this.lblWidth.Size = new System.Drawing.Size(76, 42);
             this.lblWidth.TabIndex = 4;
             this.lblWidth.Text = ": عرض";
             // 
@@ -86,9 +90,10 @@
             this.btnSaveToFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveToFile.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnSaveToFile.ForeColor = System.Drawing.Color.White;
-            this.btnSaveToFile.Location = new System.Drawing.Point(13, 70);
+            this.btnSaveToFile.Location = new System.Drawing.Point(17, 86);
+            this.btnSaveToFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveToFile.Name = "btnSaveToFile";
-            this.btnSaveToFile.Size = new System.Drawing.Size(93, 32);
+            this.btnSaveToFile.Size = new System.Drawing.Size(124, 39);
             this.btnSaveToFile.TabIndex = 2;
             this.btnSaveToFile.Text = "ذخیره";
             this.btnSaveToFile.UseVisualStyleBackColor = true;
@@ -102,9 +107,10 @@
             this.btnBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackward.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnBackward.ForeColor = System.Drawing.Color.White;
-            this.btnBackward.Location = new System.Drawing.Point(177, 70);
+            this.btnBackward.Location = new System.Drawing.Point(236, 86);
+            this.btnBackward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(93, 32);
+            this.btnBackward.Size = new System.Drawing.Size(124, 39);
             this.btnBackward.TabIndex = 3;
             this.btnBackward.Text = "صفحه قبل";
             this.btnBackward.UseVisualStyleBackColor = true;
@@ -116,10 +122,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(17, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 23);
+            this.label1.Size = new System.Drawing.Size(66, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "میلی متر";
             // 
@@ -129,20 +134,19 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(176, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(235, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 23);
+            this.label2.Size = new System.Drawing.Size(66, 30);
             this.label2.TabIndex = 7;
             this.label2.Text = "میلی متر";
             // 
             // Page_Setting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Czech.Properties.Resources.dsfsdf1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(334, 114);
+            this.ClientSize = new System.Drawing.Size(445, 140);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBackward);
@@ -152,6 +156,7 @@
             this.Controls.Add(this.txtWidth);
             this.Controls.Add(this.lblHeight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Page_Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page_Setting";

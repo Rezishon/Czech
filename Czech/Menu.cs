@@ -56,6 +56,9 @@ namespace Czech
 
         private void btnPrint_Click(System.Object sender, System.EventArgs e)
         {
+            Text_Setting text_Setting = new Text_Setting();
+            text_Setting.Text_Setting_Load(sender, e);
+            publicClass.pageLoad();
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
@@ -65,9 +68,9 @@ namespace Czech
             if (result == DialogResult.OK)
             {
                 printPreviewDialog1.Document = document;
-               
                 printPreviewDialog1.ShowDialog();
-                
+
+
             }
         }
 
@@ -75,11 +78,9 @@ namespace Czech
         {
             try
             {
-                // lines 43, 44 | should change and replace in page_value()
                 string text = "In document_PrintPage method.\nIn document_PrintPage method. 2\nIn document_PrintPage method. 3";
                 Font printFont = new Font("Arial", 15, FontStyle.Regular);
 
-                // Error
                 e.Graphics.DrawImage(publicClass.Czech_Image, 0, 0);
                 e.Graphics.DrawString(text, printFont, Brushes.Black, 540, 0);
             }
@@ -88,13 +89,5 @@ namespace Czech
                 MessageBox.Show("An error occurred printing the file - " + ex.Message);
             }
         }
-
-
-        // Page Class:
-        //public void page_setting()
-        //{
-        //    document.DefaultPageSettings.Landscape = true;
-        //    document.DefaultPageSettings.PaperSize.RawKind = 11;
-        //}
     }
 }

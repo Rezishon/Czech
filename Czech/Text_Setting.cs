@@ -81,7 +81,7 @@ namespace Czech
 
         }
 
-        private void Text_Setting_Load(object sender, EventArgs e)
+        public void Text_Setting_Load(object sender, EventArgs e)
         {
             publicClass.pageLoad();
             text = publicClass.File_Text;
