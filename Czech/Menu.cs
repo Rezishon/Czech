@@ -59,6 +59,7 @@ namespace Czech
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
+            
 
             DialogResult result = PrintDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -66,6 +67,7 @@ namespace Czech
                 printPreviewDialog1.Document = document;
                
                 printPreviewDialog1.ShowDialog();
+                
             }
         }
 
