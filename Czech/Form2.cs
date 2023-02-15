@@ -26,23 +26,24 @@ namespace Czech
 
 
             
-            paperSize.PaperName = "custom";
-            paperSize.Width = 335;
-            paperSize.Height = 669;
-
-            pPC.Zoom = 1;
-            pPC.Document = document;
+            //pPC.Zoom = 1;
             pPC.UseAntiAlias = true;
 
-            document.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
-            document.PrinterSettings.DefaultPageSettings.Landscape = true;
-
-            document.DefaultPageSettings.PaperSize = paperSize;
+            //document.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
+            document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
             document.DefaultPageSettings.Landscape = true;
-
+            document.DefaultPageSettings.Margins.Left = 100;
             
 
+            //document.PrinterSettings.DefaultPageSettings.Landscape = true;
+
+
+            //document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("my", 1000, 500);
+            //document.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
+
+            pPC.Document = document;
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
+        
         }
 
         private void document_PrintPage(object sender, PrintPageEventArgs e)
@@ -59,8 +60,9 @@ namespace Czech
 
                 int X = Convert.ToInt32(document.DefaultPageSettings.PrintableArea.X);
                 int Y = Convert.ToInt32(document.DefaultPageSettings.PrintableArea.Y);
-
-                e.Graphics.DrawImage(publicClass.Czech_Image, 0 - X, 0 - Y);
+                
+                
+                e.Graphics.DrawImage(publicClass.Czech_Image, (document.DefaultPageSettings.PaperSize.Width - publicClass.Czech_Image.Width) - X, 0 - Y);
                 e.Graphics.DrawString(text1, printFont, Brushes.Black, 10 - X, 10 - Y);
                 e.Graphics.DrawString(text2, printFont, Brushes.Black, 10 - X, 50 - Y);
                 e.Graphics.DrawString(text3, printFont, Brushes.Black, 10 - X, 90 - Y);
@@ -74,33 +76,31 @@ namespace Czech
         private void button1_Click(object sender, EventArgs e)
         {
             //Text_Setting text_Setting = new Text_Setting();
-            //text_Setting.Text_Setting_Load(sender, e);
-
-            //printDialog1.Document = document;
-            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
-            //printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
 
             //MessageBox.Show($"{printDialog1.PrinterSettings.printer}");
-
-            //DialogResult result = printDialog1.ShowDialog();
+            //printDialog1.PrinterSettings.DefaultPageSettings.Landscape = false;
+            printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
+            document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
+            DialogResult result = printDialog1.ShowDialog();
 
             //MessageBox.Show(printDialog1.PrinterSettings.PaperSizes.ToString());
 
             //if (result == DialogResult.OK)
             //{
-            // print instently:
             try
-            {
-                document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("A5",826,582);
+                {
+                //printPreviewDialog1.Document = document;
+                //printPreviewDialog1.ShowDialog();
+
                 document.Print();
-            }
-            finally
-            {
-                Form2_Load(null,null);
-            }
-            //printPreviewDialog1.Document = document;
-            //printPreviewDialog1.ShowDialog();
+                }
+                finally
+                {
+                    Form2_Load(null, null);
+                }
+
             //}
+
         }
 
         private void Document_PrintPage(object sender, PrintPageEventArgs e)
