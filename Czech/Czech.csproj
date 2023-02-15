@@ -122,7 +122,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Line List.txt" />
     <None Include="Resources\Untitled-41.jpg" />
     <None Include="Resources\Untitled-4.jpg" />
     <None Include="Resources\Untitled-4.png" />
