@@ -25,6 +25,7 @@ namespace Czech
             MessageBox.Show($"X: {document.DefaultPageSettings.PrintableArea.X}, Y: {document.DefaultPageSettings.PrintableArea.Y}");
 
 
+            
             paperSize.PaperName = "custom";
             paperSize.Width = 335;
             paperSize.Height = 669;
@@ -38,6 +39,8 @@ namespace Czech
 
             document.DefaultPageSettings.PaperSize = paperSize;
             document.DefaultPageSettings.Landscape = true;
+
+            
 
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
         }
@@ -70,27 +73,39 @@ namespace Czech
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Text_Setting text_Setting = new Text_Setting();
-            text_Setting.Text_Setting_Load(sender, e);
+            //Text_Setting text_Setting = new Text_Setting();
+            //text_Setting.Text_Setting_Load(sender, e);
 
-            printDialog1.Document = document;
-            printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
-            printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
-
+            //printDialog1.Document = document;
+            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
+            //printDialog1.PrinterSettings.DefaultPageSettings.Landscape = true;
 
             //MessageBox.Show($"{printDialog1.PrinterSettings.printer}");
 
-            DialogResult result = printDialog1.ShowDialog();
+            //DialogResult result = printDialog1.ShowDialog();
 
             //MessageBox.Show(printDialog1.PrinterSettings.PaperSizes.ToString());
 
-            if (result == DialogResult.OK)
+            //if (result == DialogResult.OK)
+            //{
+            // print instently:
+            try
             {
-                // print instently
-                //document.Print();
-                printPreviewDialog1.Document = document;
-                printPreviewDialog1.ShowDialog();
+                document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("A5",826,582);
+                document.Print();
             }
+            finally
+            {
+                Form2_Load(null,null);
+            }
+            //printPreviewDialog1.Document = document;
+            //printPreviewDialog1.ShowDialog();
+            //}
+        }
+
+        private void Document_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
