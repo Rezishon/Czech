@@ -18,31 +18,27 @@ namespace Czech
         {
             InitializeComponent();
         }
-        int X;
-        int Y;
         private void Form2_Load(object sender, EventArgs e)
         {
-            MessageBox.Show($"X: {document.DefaultPageSettings.PrintableArea.X}, Y: {document.DefaultPageSettings.PrintableArea.Y}");
-
+            MessageBox.Show($"X: {document.PrinterSettings.DefaultPageSettings.PrintableArea.X}, Y: {document.PrinterSettings.DefaultPageSettings.PrintableArea.Y}");
 
             
             //pPC.Zoom = 1;
             pPC.UseAntiAlias = true;
 
-            //document.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
-            document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
             document.DefaultPageSettings.Landscape = true;
-            document.DefaultPageSettings.Margins.Left = 100;
-            
+            //document.DefaultPageSettings.Margins.Left = 100;
+
+            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("new", 335, 669);
+            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
 
             //document.PrinterSettings.DefaultPageSettings.Landscape = true;
 
 
-            //document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("my", 1000, 500);
-            //document.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A5;
+            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("my", 335, 669);
 
-            pPC.Document = document;
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
+            pPC.Document = document;
         
         }
 
@@ -50,6 +46,9 @@ namespace Czech
         {
             try
             {
+                document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
+                document.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
+                document.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
                 string text1 = "1 4 0 1 1 1 2 5";
                 string text2 = "In document_PrintPage method. 2";
                 string text3 = "2 5 0 0 0 0 0 0 0";
@@ -58,11 +57,11 @@ namespace Czech
                 publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
                 publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
 
-                int X = Convert.ToInt32(document.DefaultPageSettings.PrintableArea.X);
-                int Y = Convert.ToInt32(document.DefaultPageSettings.PrintableArea.Y);
+                int X = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.X);
+                int Y = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.Y);
                 
                 
-                e.Graphics.DrawImage(publicClass.Czech_Image, (document.DefaultPageSettings.PaperSize.Width - publicClass.Czech_Image.Width) - X, 0 - Y);
+                e.Graphics.DrawImage(publicClass.Czech_Image, 0 - X, 0 - Y);
                 e.Graphics.DrawString(text1, printFont, Brushes.Black, 10 - X, 10 - Y);
                 e.Graphics.DrawString(text2, printFont, Brushes.Black, 10 - X, 50 - Y);
                 e.Graphics.DrawString(text3, printFont, Brushes.Black, 10 - X, 90 - Y);
@@ -79,29 +78,28 @@ namespace Czech
 
             //MessageBox.Show($"{printDialog1.PrinterSettings.printer}");
             //printDialog1.PrinterSettings.DefaultPageSettings.Landscape = false;
-            printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
-            document.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("AAAAAAAAAAAAAAAAA", 335, 669);
+                    document.PrintPage += new PrintPageEventHandler(document_PrintPage);
             DialogResult result = printDialog1.ShowDialog();
 
             //MessageBox.Show(printDialog1.PrinterSettings.PaperSizes.ToString());
 
-            //if (result == DialogResult.OK)
-            //{
-            try
+            if (result == DialogResult.OK)
+            {
+                try
                 {
-                //printPreviewDialog1.Document = document;
-                //printPreviewDialog1.ShowDialog();
+                    //printPreviewDialog1.Document = document;
+                    //printPreviewDialog1.ShowDialog();
 
-                document.Print();
+                    document.Print();
                 }
                 finally
                 {
                     Form2_Load(null, null);
                 }
 
-            //}
-
         }
+
+    }
 
         private void Document_PrintPage(object sender, PrintPageEventArgs e)
         {

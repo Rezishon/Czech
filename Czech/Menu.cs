@@ -58,7 +58,6 @@ namespace Czech
         {
             Text_Setting text_Setting = new Text_Setting();
             text_Setting.Text_Setting_Load(sender, e);
-            publicClass.pageLoad();
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
