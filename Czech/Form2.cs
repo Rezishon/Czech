@@ -27,15 +27,8 @@ namespace Czech
             pPC.UseAntiAlias = true;
 
             document.DefaultPageSettings.Landscape = true;
-            //document.DefaultPageSettings.Margins.Left = 100;
-
-            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("new", 335, 669);
-            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
-
-            //document.PrinterSettings.DefaultPageSettings.Landscape = true;
-
-
-            //printDialog1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("my", 335, 669);
+            document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
+            document.PrinterSettings.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
 
             document.PrintPage += new PrintPageEventHandler(document_PrintPage);
             pPC.Document = document;
@@ -75,31 +68,45 @@ namespace Czech
         private void button1_Click(object sender, EventArgs e)
         {
             //Text_Setting text_Setting = new Text_Setting();
+            //try
+            //{
+            //    document.PrinterSettings.PrinterName = "sdfsdxcvxckoki";
+            //    document.Print();
+
+            //}
+            //catch(Exception ex)
+            //{
+            //   Exception exception = ex;
+            //}
+            //finally
+            //{
+
+            //}
 
             //MessageBox.Show($"{printDialog1.PrinterSettings.printer}");
             //printDialog1.PrinterSettings.DefaultPageSettings.Landscape = false;
-                    document.PrintPage += new PrintPageEventHandler(document_PrintPage);
-            DialogResult result = printDialog1.ShowDialog();
+
+            //DialogResult result = printDialog1.ShowDialog();
 
             //MessageBox.Show(printDialog1.PrinterSettings.PaperSizes.ToString());
 
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    //printPreviewDialog1.Document = document;
-                    //printPreviewDialog1.ShowDialog();
+            MessageBox.Show(document.DefaultPageSettings.PaperSize.Kind.ToString());
 
-                    document.Print();
-                }
-                finally
-                {
-                    Form2_Load(null, null);
-                }
+            //if (result == DialogResult.OK)
+            //{
+            //printPreviewDialog1.Document = document;
+            //printPreviewDialog1.ShowDialog();
+
+            document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
+            document.PrinterSettings.PrinterName = default;
+            document.Print();
+
+            Form2_Load(null,null);
+
+            MessageBox.Show(document.DefaultPageSettings.PaperSize.Kind.ToString());
+            //}
 
         }
-
-    }
 
         private void Document_PrintPage(object sender, PrintPageEventArgs e)
         {
