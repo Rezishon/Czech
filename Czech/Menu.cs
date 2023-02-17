@@ -61,7 +61,8 @@ namespace Czech
             publicClass.page_setting();
             PrintDialog1.AllowSomePages = true;
             PrintDialog1.Document = document;
-            
+
+            document.PrintPage += new PrintPageEventHandler(publicClass.document_PrintPage);  
 
             DialogResult result = PrintDialog1.ShowDialog();
             if (result == DialogResult.OK)

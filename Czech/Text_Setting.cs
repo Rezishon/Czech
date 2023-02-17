@@ -83,6 +83,7 @@ namespace Czech
 
         public void Text_Setting_Load(object sender, EventArgs e)
         {
+            //pPC.Zoom = 10;
             publicClass.pageLoad();
             text = publicClass.File_Text;
             list = publicClass.File_List;

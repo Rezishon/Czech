@@ -257,12 +257,14 @@ namespace Czech
 
         public void page_setting()
         {
+
+            PaperSize paperSize = new PaperSize();
+            paperSize.RawKind = (int)PaperKind.A4;
+
             pageLoad();
-            //document.DefaultPageSettings.PaperSize = new PaperSize("Custom", Convert.ToInt32(file_text[File_List["Length"]]), Convert.ToInt32(file_text[File_List["Width"]])); 
-            document.DefaultPageSettings.PaperSize.RawKind = (int)PaperKind.A4;
+            document.DefaultPageSettings.PaperSize = paperSize;
             document.DefaultPageSettings.Landscape = true;
             
-            document.PrintPage += new PrintPageEventHandler(document_PrintPage);
         }
 
         public void document_PrintPage(object sender, PrintPageEventArgs e)
