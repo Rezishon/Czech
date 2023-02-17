@@ -22,15 +22,16 @@ namespace Czech
         {
             try
             {
-                PrintTaskOptions printingOptions = ((PrintTaskOptions)e.PrintTaskOptions);
-
-                // Get the page description to deterimine how big the page is
-                PrintPageDescription pageDescription = printingOptions.GetPageDescription(0);
                 pPC.Zoom = 1;
                 PaperSize paperSize = new PaperSize();
-                paperSize.RawKind = (int)PaperKind.A5;
+                paperSize.RawKind = (int)PaperKind.A4;
                 paperSize.Width = 335;
                 paperSize.Height = 669;
+
+
+
+
+
                 pPC.UseAntiAlias = true;
 
                 document.DefaultPageSettings.Landscape = true;
@@ -62,9 +63,11 @@ namespace Czech
 
                 int X = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.X);
                 int Y = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.Y);
-                
-                
-                e.Graphics.DrawImage(publicClass.Czech_Image, 0 - X, 0 - Y);
+
+                float hei = (document.DefaultPageSettings.PrintableArea.Height / 2) ;
+
+
+                e.Graphics.DrawImage(publicClass.Czech_Image, (document.DefaultPageSettings.PrintableArea.Width - 335) - X, (hei -(335)) - Y);
                 e.Graphics.DrawString(text1, printFont, Brushes.Black, 10 - X, 10 - Y);
                 e.Graphics.DrawString(text2, printFont, Brushes.Black, 10 - X, 50 - Y);
                 e.Graphics.DrawString(text3, printFont, Brushes.Black, 10 - X, 90 - Y);
