@@ -28,9 +28,23 @@ namespace Czech
 
         private void btnSaveToFile_Click(object sender, EventArgs e)
         {
-            publicClass.SaveTextFile(publicClass.inch_To_100(publicClass.string_To_Double(txtLength.Text)).ToString(), publicClass.File_List["Length"]);
-            publicClass.SaveTextFile(publicClass.inch_To_100(publicClass.string_To_Double(txtWidth.Text)).ToString(), publicClass.File_List["Width"]);
-            MessageBox.Show("ذخیره شد","Save");
+            if (txtLength.Text.Length >= 4 || txtWidth.Text.Length >= 4)
+            {
+                MessageBox.Show("طول یا عرض باید کمتر از 1000 میلی متر باشد");
+            }
+            else
+            {
+                if (txtLength.Text.Length <= 1 || txtWidth.Text.Length <= 1)
+                {
+                    MessageBox.Show("طول یا عرض باید حداقل 10 میلی متر باشد");
+                }
+                else
+                {
+                    publicClass.SaveTextFile(publicClass.inch_To_100(publicClass.string_To_Double(txtLength.Text)).ToString(), publicClass.File_List["Length"]);
+                    publicClass.SaveTextFile(publicClass.inch_To_100(publicClass.string_To_Double(txtWidth.Text)).ToString(), publicClass.File_List["Width"]);
+                    MessageBox.Show("ذخیره شد", "Save");
+                }
+            }
         }
 
         private void Page_Setting_Load(object sender, EventArgs e)

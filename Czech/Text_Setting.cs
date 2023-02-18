@@ -50,35 +50,70 @@ namespace Czech
             return fo;
         }
 
+        public bool valid1(string str)
+        {
+            bool bo = false;
+            if (Convert.ToInt32(str) > Convert.ToInt32(publicClass.PageHeight) || Convert.ToInt32(str) <= 0)
+            {
+                bo = true;
+            }
+            return bo;
+        }
+        public bool valid2(string str)
+        {
+            bool bo = false;
+            if (Convert.ToInt32(str) > Convert.ToInt32(publicClass.PageWidth) || Convert.ToInt32(str) <= 0)
+            {
+                bo = true;
+            }
+            return bo;
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            #region Saves
+            publicClass.pageLoad();
+            if (valid1(txtDateInNum1.Text) || valid1(txtDateInWord1.Text) || valid1(txtMoneyInWord1.Text) || valid1(txtFor1.Text) || valid1(txtNationalCode1.Text) || valid1(txtMoneyInNum1.Text))
+            {
+                MessageBox.Show("متن ها باید داخل کادر باشند");
+            }
+            else
+            {
+                if (valid2(txtDateInNum2.Text) || valid2(txtDateInWord2.Text) || valid2(txtMoneyInWord2.Text) || valid2(txtFor2.Text) || valid2(txtNationalCode2.Text) || valid2(txtMoneyInNum2.Text))
+                {
+                    MessageBox.Show("متن ها باید داخل کادر باشند");
+                }
+                else
+                {
+                    #region Saves
 
-            publicClass.SaveTextFile(txtDateInNum1.Text, list["DateInNum_X"]);
-            publicClass.SaveTextFile(txtDateInNum2.Text, list["DateInNum_Y"]);
-            publicClass.SaveTextFile(txtDateInWord1.Text, list["DateInWord_X"]);
-            publicClass.SaveTextFile(txtDateInWord2.Text, list["DateInWord_Y"]);
-            publicClass.SaveTextFile(txtMoneyInWord1.Text, list["MoneyInWord_X"]);
-            publicClass.SaveTextFile(txtMoneyInWord2.Text, list["MoneyInWord_Y"]);
-            publicClass.SaveTextFile(txtFor1.Text, list["For_X"]);
-            publicClass.SaveTextFile(txtFor2.Text, list["For_Y"]);
-            publicClass.SaveTextFile(txtNationalCode1.Text, list["NationalCode_X"]);
-            publicClass.SaveTextFile(txtNationalCode2.Text, list["NationalCode_Y"]);
-            publicClass.SaveTextFile(txtMoneyInNum1.Text, list["MoneyInNum_X"]);
-            publicClass.SaveTextFile(txtMoneyInNum2.Text, list["MoneyInNum_Y"]);
+                    publicClass.SaveTextFile(txtDateInNum1.Text, list["DateInNum_X"]);
+                    publicClass.SaveTextFile(txtDateInNum2.Text, list["DateInNum_Y"]);
+                    publicClass.SaveTextFile(txtDateInWord1.Text, list["DateInWord_X"]);
+                    publicClass.SaveTextFile(txtDateInWord2.Text, list["DateInWord_Y"]);
+                    publicClass.SaveTextFile(txtMoneyInWord1.Text, list["MoneyInWord_X"]);
+                    publicClass.SaveTextFile(txtMoneyInWord2.Text, list["MoneyInWord_Y"]);
+                    publicClass.SaveTextFile(txtFor1.Text, list["For_X"]);
+                    publicClass.SaveTextFile(txtFor2.Text, list["For_Y"]);
+                    publicClass.SaveTextFile(txtNationalCode1.Text, list["NationalCode_X"]);
+                    publicClass.SaveTextFile(txtNationalCode2.Text, list["NationalCode_Y"]);
+                    publicClass.SaveTextFile(txtMoneyInNum1.Text, list["MoneyInNum_X"]);
+                    publicClass.SaveTextFile(txtMoneyInNum2.Text, list["MoneyInNum_Y"]);
 
-            publicClass.SaveTextFile(checkBox1.Checked.ToString(), list["DateInWord_Enable"]);
-            publicClass.SaveTextFile(checkBox2.Checked.ToString(), list["NationalCode_Enable"]);
-            publicClass.SaveTextFile(checkBoxDate.Checked.ToString(), list["Date_Enable"]);
+                    publicClass.SaveTextFile(checkBox1.Checked.ToString(), list["DateInWord_Enable"]);
+                    publicClass.SaveTextFile(checkBox2.Checked.ToString(), list["NationalCode_Enable"]);
+                    publicClass.SaveTextFile(checkBoxDate.Checked.ToString(), list["Date_Enable"]);
 
-            #endregion
+                    #endregion
 
-            MessageBox.Show("ذخیره شد", "Save");
+                    MessageBox.Show("ذخیره شد", "Save");
 
-            Text_Setting text_Setting = new Text_Setting();
-            text_Setting.Show();
-            this.Close();
+                    Text_Setting text_Setting = new Text_Setting();
+                    text_Setting.Show();
+                    this.Close();
 
+                }
+            }
         }
 
         public void Text_Setting_Load(object sender, EventArgs e)

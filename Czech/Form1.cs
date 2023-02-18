@@ -91,10 +91,18 @@ namespace Czech
             }
             else
             {
-                Menu menu = new Menu();
-                this.Hide();
-                menu.Show();
+                if (txtCode.Text.Length != 10 && txtCode.Text.Length > 0)
+                {
+                    MessageBox.Show("کد ملی باید 10 رقم باشد");
+                }
+                else
+                {
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.Show();
+                }
             }
+
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)

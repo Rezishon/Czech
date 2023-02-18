@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Czech
@@ -25,7 +21,7 @@ namespace Czech
             {
                 publicClass.pageLoad();
                 //publicClass.page_setting();
-                this.document = publicClass.Document;
+                //this.document = publicClass.Document;
 
 
                 //document.PrintPage += new PrintPageEventHandler(document_PrintPage);
