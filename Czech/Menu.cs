@@ -126,7 +126,7 @@ namespace Czech
                 publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
                 publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
 
-                //e.Graphics.DrawImage(publicClass.Czech_Image, PH - (H + X), (hei - (W / 2)) - Y);
+                //e.Graphics.DrawImage(publicClass.Czech_Image, PH - (H), (hei - (W / 2)) + Y);
 
                 if (bool.Parse(publicClass.File_Text[publicClass.File_List["DateInWord_Enable"]]) == false) strings[0] = "";
                 if (bool.Parse(publicClass.File_Text[publicClass.File_List["NationalCode_Enable"]]) == false) strings[12] = "";
@@ -138,7 +138,7 @@ namespace Czech
                 {
 
 
-                    e.Graphics.DrawString(strings[i], fonts[j], Brushes.Black, PH - (H + X) + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 1]]]), (hei - (W / 2)) - Y + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 2]]]));
+                    e.Graphics.DrawString(strings[i], fonts[j], Brushes.Black, (PH - (H + X)) + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 1]]]), ((hei - (W / 2)) - Y) + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 2]]]));
                     j++;
                 }
 
