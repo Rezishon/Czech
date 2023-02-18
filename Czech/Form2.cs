@@ -25,8 +25,8 @@ namespace Czech
                 pPC.Zoom = 1;
                 PaperSize paperSize = new PaperSize();
                 paperSize.RawKind = (int)PaperKind.A4;
-                paperSize.Width = 335;
-                paperSize.Height = 669;
+                paperSize.Width = 826;
+                paperSize.Height = 1169;
 
 
 
@@ -63,14 +63,18 @@ namespace Czech
 
                 int X = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.X);
                 int Y = Convert.ToInt32(document.PrinterSettings.DefaultPageSettings.PrintableArea.Y);
+                int H = int.Parse(publicClass.File_Text[publicClass.File_List["Length"]]);
+                int W = int.Parse(publicClass.File_Text[publicClass.File_List["Width"]]);
+                int PH = document.DefaultPageSettings.PaperSize.Height;
 
-                float hei = (document.DefaultPageSettings.PrintableArea.Height / 2) ;
+
+                float hei = (document.DefaultPageSettings.PaperSize.Width / 2) ;
 
 
-                e.Graphics.DrawImage(publicClass.Czech_Image, (document.DefaultPageSettings.PrintableArea.Width - 335) - X, (hei -(335)) - Y);
-                e.Graphics.DrawString(text1, printFont, Brushes.Black, 10 - X, 10 - Y);
-                e.Graphics.DrawString(text2, printFont, Brushes.Black, 10 - X, 50 - Y);
-                e.Graphics.DrawString(text3, printFont, Brushes.Black, 10 - X, 90 - Y);
+                e.Graphics.DrawImage(publicClass.Czech_Image, document.DefaultPageSettings.PaperSize.Height - (H + X), (hei -(335/2)) - Y);
+                //e.Graphics.DrawString(text1, printFont, Brushes.Black, PH - (H + X) + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 1]]]), (hei - (W / 2)) - Y + float.Parse(publicClass.File_Text[publicClass.File_List[strings[i + 2]]])));
+                e.Graphics.DrawString(text2, printFont, Brushes.Black, document.DefaultPageSettings.PaperSize.Height - (H + X) + 10, (hei - (335 / 2)) - Y + 50);
+                e.Graphics.DrawString(text3, printFont, Brushes.Black, document.DefaultPageSettings.PaperSize.Height - (H + X) + 10, (hei - (335 / 2)) - Y + 90);
             }
             catch (Exception ex)
             {

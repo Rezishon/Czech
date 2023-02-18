@@ -14,8 +14,8 @@ namespace Czech
     {
         PublicClass publicClass = new PublicClass();
         Font font = null;
-        string[] text;
-        Dictionary<string, int> list;
+        public string[] text;
+        public Dictionary<string, int> list;
 
         public Text_Setting()
         {
@@ -83,7 +83,7 @@ namespace Czech
 
         public void Text_Setting_Load(object sender, EventArgs e)
         {
-            //pPC.Zoom = 10;
+            pPC.Zoom = 1;
             publicClass.pageLoad();
             text = publicClass.File_Text;
             list = publicClass.File_List;
