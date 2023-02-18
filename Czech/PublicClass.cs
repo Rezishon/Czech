@@ -258,9 +258,6 @@ namespace Czech
         public void page_setting()
         {
 
-            PaperSize paperSize = new PaperSize();
-            paperSize.RawKind = (int)PaperKind.A4;
-
             pageLoad();
             document.DefaultPageSettings.PaperSize = paperSize;
             document.DefaultPageSettings.Landscape = true;
