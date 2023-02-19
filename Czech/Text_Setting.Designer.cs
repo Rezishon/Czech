@@ -459,6 +459,7 @@
             this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.btnBackward);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Text_Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

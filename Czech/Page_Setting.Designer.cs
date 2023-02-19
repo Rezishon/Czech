@@ -43,7 +43,7 @@
             // 
             this.txtWidth.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtWidth.Location = new System.Drawing.Point(236, 12);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(4);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(124, 36);
             this.txtWidth.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.txtLength.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtLength.Location = new System.Drawing.Point(13, 12);
-            this.txtLength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLength.Margin = new System.Windows.Forms.Padding(4);
             this.txtLength.Name = "txtLength";
             this.txtLength.Size = new System.Drawing.Size(124, 36);
             this.txtLength.TabIndex = 1;
@@ -91,7 +91,7 @@
             this.btnSaveToFile.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnSaveToFile.ForeColor = System.Drawing.Color.White;
             this.btnSaveToFile.Location = new System.Drawing.Point(17, 86);
-            this.btnSaveToFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveToFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveToFile.Name = "btnSaveToFile";
             this.btnSaveToFile.Size = new System.Drawing.Size(124, 39);
             this.btnSaveToFile.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.btnBackward.Font = new System.Drawing.Font("2  Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnBackward.ForeColor = System.Drawing.Color.White;
             this.btnBackward.Location = new System.Drawing.Point(236, 86);
-            this.btnBackward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackward.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(124, 39);
             this.btnBackward.TabIndex = 3;
@@ -156,7 +156,8 @@
             this.Controls.Add(this.txtWidth);
             this.Controls.Add(this.lblHeight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Page_Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page_Setting";
