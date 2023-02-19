@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_20D1AB3557BA46509842B5C4C459236D"
+        "MsmKey" = "8:_11F6C2C1838D428EA02014A6F42EF707"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -23,6 +23,24 @@
         {
         "MsmKey" = "8:_366F2DE77F7C43E0B7FEE7AFEA47CD4D"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5393DDEC7F8E44FFC030760E71C8C935"
+        "OwnerKey" = "8:_650F2F010AE04A3190175E6371BF2E55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5393DDEC7F8E44FFC030760E71C8C935"
+        "OwnerKey" = "8:_A421EB5A70134B016AD6F409A56EC555"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5393DDEC7F8E44FFC030760E71C8C935"
+        "OwnerKey" = "8:_782E4C9FE6C8057A74E9AC0F47E66C7F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,14 +57,50 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C60D9F6FBCE44F58B215F9514DE55EAF"
+        "MsmKey" = "8:_782E4C9FE6C8057A74E9AC0F47E66C7F"
+        "OwnerKey" = "8:_650F2F010AE04A3190175E6371BF2E55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_782E4C9FE6C8057A74E9AC0F47E66C7F"
+        "OwnerKey" = "8:_A421EB5A70134B016AD6F409A56EC555"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8F65209522AE4E70A2FE97D93221280B"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A421EB5A70134B016AD6F409A56EC555"
+        "OwnerKey" = "8:_650F2F010AE04A3190175E6371BF2E55"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_650F2F010AE04A3190175E6371BF2E55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A421EB5A70134B016AD6F409A56EC555"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_782E4C9FE6C8057A74E9AC0F47E66C7F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5393DDEC7F8E44FFC030760E71C8C935"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -123,7 +177,7 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_20D1AB3557BA46509842B5C4C459236D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11F6C2C1838D428EA02014A6F42EF707"
             {
             "SourcePath" = "8:C:\\Users\\SFR\\Desktop\\ReadME.txt"
             "TargetName" = "8:ReadME.txt"
@@ -163,6 +217,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5393DDEC7F8E44FFC030760E71C8C935"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FarsiLibrary.Resources, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5393DDEC7F8E44FFC030760E71C8C935"
+                    {
+                    "Name" = "8:FarsiLibrary.Resources.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FarsiLibrary.Resources.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5955E70597AE422591520CCA4A3DCB7F"
             {
             "SourcePath" = "8:..\\Resources\\Untitled-3.ico"
@@ -183,7 +268,38 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C60D9F6FBCE44F58B215F9514DE55EAF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_782E4C9FE6C8057A74E9AC0F47E66C7F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FarsiLibrary.Utils, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_782E4C9FE6C8057A74E9AC0F47E66C7F"
+                    {
+                    "Name" = "8:FarsiLibrary.Utils.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FarsiLibrary.Utils.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F65209522AE4E70A2FE97D93221280B"
             {
             "SourcePath" = "8:C:\\Users\\SFR\\Desktop\\ReadME.txt"
             "TargetName" = "8:ReadME.txt"
@@ -201,6 +317,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A421EB5A70134B016AD6F409A56EC555"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FarsiLibrary.Win, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A421EB5A70134B016AD6F409A56EC555"
+                    {
+                    "Name" = "8:FarsiLibrary.Win.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FarsiLibrary.Win.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -282,7 +429,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Czech Printer"
         "ProductCode" = "8:{0A69170C-7DF3-44B0-AABE-ECA7F2D29B1B}"
-        "PackageCode" = "8:{A5626F02-852D-4F13-B24B-B3D2AD975C7E}"
+        "PackageCode" = "8:{96BF838E-7B9C-4DF0-BAE2-63D90041EBE1}"
         "UpgradeCode" = "8:{BC91C7CE-A856-4D02-A74E-736AB05B21FF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
