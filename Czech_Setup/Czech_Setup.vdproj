@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_11F6C2C1838D428EA02014A6F42EF707"
+        "MsmKey" = "8:_0A381C1D4E324E03A61A3B56D96279FD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_366F2DE77F7C43E0B7FEE7AFEA47CD4D"
+        "MsmKey" = "8:_4E740AFA40144BADB138A8D09400EE18"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5955E70597AE422591520CCA4A3DCB7F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_650F2F010AE04A3190175E6371BF2E55"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,7 +63,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8F65209522AE4E70A2FE97D93221280B"
+        "MsmKey" = "8:_8577348A9B364BC5B80653123FD9E6CE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9BE4DC36F0AC4409BBDB542F32181905"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -154,6 +154,62 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_36083BF0AAD24B9AA35CD78611C2D32F"
+            {
+            "Name" = "8:Primary output from Czech (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_650F2F010AE04A3190175E6371BF2E55"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_CAF7A44F_6768_4A7D_9364_6B23FDBCFF34"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_51A6CA7BE2524F5CBD2541E5B10588A9"
+            {
+            "Name" = "8:Primary output from Czech (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_650F2F010AE04A3190175E6371BF2E55"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_B57F37A6_5E23_4ED4_AFDF_712CDE1DD9FA"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_75C53604D300471792E06F859F11B3C5"
+            {
+            "Name" = "8:Primary output from Czech (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_650F2F010AE04A3190175E6371BF2E55"
+            "FileType" = "3:2"
+            "InstallAction" = "3:3"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_DD11C35E_C85A_4A8E_8F15_65B2186E8631"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_780BFE99BACC49B48E4E4C228C4392CC"
+            {
+            "Name" = "8:Primary output from Czech (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_650F2F010AE04A3190175E6371BF2E55"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_4688681E_A0BF_4982_8590_1FF18DFFBA1D"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -177,12 +233,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11F6C2C1838D428EA02014A6F42EF707"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A381C1D4E324E03A61A3B56D96279FD"
             {
-            "SourcePath" = "8:C:\\Users\\SFR\\Desktop\\ReadME.txt"
-            "TargetName" = "8:ReadME.txt"
+            "SourcePath" = "8:..\\Fonts\\image2.jpg"
+            "TargetName" = "8:image2.jpg"
             "Tag" = "8:"
-            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Folder" = "8:_79254CD871C841E28A1E75A3C9A5A599"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -197,12 +253,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_366F2DE77F7C43E0B7FEE7AFEA47CD4D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4E740AFA40144BADB138A8D09400EE18"
             {
-            "SourcePath" = "8:..\\Resources\\image2.jpg"
-            "TargetName" = "8:image2.jpg"
+            "SourcePath" = "8:..\\Fonts\\ReadME.txt"
+            "TargetName" = "8:ReadME.txt"
             "Tag" = "8:"
-            "Folder" = "8:_79254CD871C841E28A1E75A3C9A5A599"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -248,26 +304,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5955E70597AE422591520CCA4A3DCB7F"
-            {
-            "SourcePath" = "8:..\\Resources\\Untitled-3.ico"
-            "TargetName" = "8:Untitled-3.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_782E4C9FE6C8057A74E9AC0F47E66C7F"
             {
             "AssemblyRegister" = "3:1"
@@ -299,12 +335,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F65209522AE4E70A2FE97D93221280B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8577348A9B364BC5B80653123FD9E6CE"
             {
-            "SourcePath" = "8:C:\\Users\\SFR\\Desktop\\ReadME.txt"
-            "TargetName" = "8:ReadME.txt"
+            "SourcePath" = "8:..\\Fonts\\Untitled-3.ico"
+            "TargetName" = "8:Untitled-3.ico"
             "Tag" = "8:"
-            "Folder" = "8:_A09C19EB7F9C4110A8F0906BD43B1B78"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -315,6 +351,26 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9BE4DC36F0AC4409BBDB542F32181905"
+            {
+            "SourcePath" = "8:..\\Fonts\\2 Titr Bold.ttf"
+            "TargetName" = "8:2 Titr Bold.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_B61A233FEDC54F3E92317F044E32BEFA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:5"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
@@ -412,6 +468,17 @@
                     }
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_B61A233FEDC54F3E92317F044E32BEFA"
+            {
+            "Name" = "8:#1911"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:FontsFolder"
+                "Folders"
+                {
+                }
+            }
         }
         "LaunchCondition"
         {
@@ -429,7 +496,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Czech Printer"
         "ProductCode" = "8:{0A69170C-7DF3-44B0-AABE-ECA7F2D29B1B}"
-        "PackageCode" = "8:{96BF838E-7B9C-4DF0-BAE2-63D90041EBE1}"
+        "PackageCode" = "8:{8D3EB9DA-81C3-4733-9F73-BD7D5E632F66}"
         "UpgradeCode" = "8:{BC91C7CE-A856-4D02-A74E-736AB05B21FF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -446,7 +513,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:نرم افزار چاپ چک (شرکت برسام پژوهش)"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_5955E70597AE422591520CCA4A3DCB7F"
+        "ARPPRODUCTICON" = "8:_8577348A9B364BC5B80653123FD9E6CE"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -549,21 +616,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_080D9F7472B44FF38E64180043C2D24F"
-            {
-            "Name" = "8:Czech_Printer"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_650F2F010AE04A3190175E6371BF2E55"
-            "Folder" = "8:_C2EFF73D32154ED19FD68C7AC61D3315"
-            "WorkingFolder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
-            "Icon" = "8:_5955E70597AE422591520CCA4A3DCB7F"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BEEC9F6B0D3E4064A801930F227DF04F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0291594781D4453397F5B315AFED5061"
             {
             "Name" = "8:Czech_Printer"
             "Arguments" = "8:"
@@ -574,7 +627,21 @@
             "Target" = "8:_650F2F010AE04A3190175E6371BF2E55"
             "Folder" = "8:_A09C19EB7F9C4110A8F0906BD43B1B78"
             "WorkingFolder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
-            "Icon" = "8:_5955E70597AE422591520CCA4A3DCB7F"
+            "Icon" = "8:_8577348A9B364BC5B80653123FD9E6CE"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1092BF17ECA14BC392B988A275C97B60"
+            {
+            "Name" = "8:Czech_Printer"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_650F2F010AE04A3190175E6371BF2E55"
+            "Folder" = "8:_C2EFF73D32154ED19FD68C7AC61D3315"
+            "WorkingFolder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }

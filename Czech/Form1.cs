@@ -171,7 +171,7 @@ namespace Czech
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
             {
-                DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image2.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                 if (dialog == DialogResult.Retry) Form1_Load(sender, e);
                 else Application.Exit();
             }
@@ -184,7 +184,7 @@ namespace Czech
             list = publicClass.File_List;
             if (File.Exists(publicClass.File_Path) == false)
             {
-                MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image2.jpg\" \nذخیره نمایید.", "تعویض تصویر چک", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
 
 
                 File.WriteAllText(publicClass.File_Path, "");
