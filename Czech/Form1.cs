@@ -1,19 +1,25 @@
-﻿using System;
+﻿using FarsiLibrary.Win.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using FarsiLibrary;
+using System.Threading;
+using FarsiLibrary.Utils;
 
 namespace Czech
 {
     public partial class Form1 : Form
     {
         PublicClass publicClass = new PublicClass();        
+        FADatePicker fADatePicker = new FADatePicker();
 
         public Form1()
         {
@@ -22,68 +28,12 @@ namespace Czech
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            publicClass.Date = dateTimePicker.Text;
+            publicClass.Date = fADatePicker.Text;
             publicClass.Money = txtMount.Text;
             publicClass.For = txtFor.Text;
             publicClass.NationalCode = txtCode.Text;
 
-            publicClass.val = dateTimePicker.Value;
-
-            #region مبلغ
-
-            #region تبدیل به حروف
-
-            if (!publicClass.InputValidator(txtMount.Text)) return;
-
-            try
-            {
-                var digit = long.Parse(txtMount.Text);
-                publicClass.Money_word = "";
-                publicClass.Money_word = publicClass.ToAlphabet(digit);
-                if (radioToman.Checked == true)
-                {
-                    publicClass.Money_word += " تومان";
-                }
-                else
-                {
-                    publicClass.Money_word += " ریال";
-                }
-                if (checkBox1.Checked == true)
-                {
-                    publicClass.Money_word += " تمام";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            #endregion
-
-            #region تبدیل به عدد چاپ
-
-            publicClass.C_PrintMoney();
-
-            #endregion
-
-
-            #endregion
-
-            #region تاریخ
-
-            #region تبدیل به حروف
-
-            publicClass.Date_To_Word(dateTimePicker.Text);
-
-            #endregion
-
-            #region تبدیل به تاریخ چاپ
-
-            publicClass.C_PrintDate();
-
-            #endregion
-
-            #endregion
+            publicClass.val = fADatePicker.Text;
 
             if (String.IsNullOrEmpty(txtFor.Text))
             {
@@ -97,11 +47,76 @@ namespace Czech
                 }
                 else
                 {
-                    Menu menu = new Menu();
-                    this.Hide();
-                    menu.Show();
+                    if (fADatePicker.Text == "[هیج مقداری انتخاب نشده]")
+                    {
+                        MessageBox.Show("لطفا تاریخی را انتخاب کنید");
+                    }
+                    else
+                    {
+                        #region مبلغ
+
+                        #region تبدیل به حروف
+
+                        if (!publicClass.InputValidator(txtMount.Text)) return;
+
+                        try
+                        {
+                            var digit = long.Parse(txtMount.Text);
+                            publicClass.Money_word = "";
+                            publicClass.Money_word = publicClass.ToAlphabet(digit);
+                            if (radioToman.Checked == true)
+                            {
+                                publicClass.Money_word += " تومان";
+                            }
+                            else
+                            {
+                                publicClass.Money_word += " ریال";
+                            }
+                            if (checkBox1.Checked == true)
+                            {
+                                publicClass.Money_word += " تمام";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                        #endregion
+
+                        #region تبدیل به عدد چاپ
+
+                        publicClass.C_PrintMoney();
+
+                        #endregion
+
+
+                        #endregion
+
+                        #region تاریخ
+
+                        #region تبدیل به حروف
+
+                        publicClass.Date_To_Word(fADatePicker.Text);
+
+                        #endregion
+
+                        #region تبدیل به تاریخ چاپ
+
+                        publicClass.C_PrintDate();
+
+                        #endregion
+
+                        #endregion
+
+                        Menu menu = new Menu();
+                        this.Hide();
+                        menu.Show();
+                    }
                 }
             }
+
+
 
         }
 
@@ -127,6 +142,28 @@ namespace Czech
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("fa-IR");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+
+            if (fADatePicker.Text == "[Empty Value]")
+            {
+                fADatePicker.Text = $"{PersianDate.Now.Year}/{PersianDate.Now.Month}/{PersianDate.Now.Day}";
+            }
+            else
+            {
+                fADatePicker.Text = publicClass.val;
+            }
+
+            fADatePicker.Location = new Point(13, 12);
+            Font font = new Font("2  Titr", 10, FontStyle.Bold);
+            fADatePicker.Font = font;
+            Size size = new Size(108, 30);
+            fADatePicker.Size = size;
+
+            this.Controls.Add(fADatePicker);
+
+
             Load_Page load_Page = new Load_Page();
             load_Page.Show();
             System.Threading.Thread.Sleep(5000);
@@ -136,42 +173,43 @@ namespace Czech
             {
                 DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                 if (dialog == DialogResult.Retry) Form1_Load(sender, e);
+                else Application.Exit();
             }
             if (publicClass.Money != string.Empty) txtMount.Text = publicClass.Money;
             if (publicClass.For != string.Empty) txtFor.Text = publicClass.For;
             if (publicClass.NationalCode != string.Empty) txtCode.Text = publicClass.NationalCode;
 
-            DateTime valu = DateTime.Parse("01 / 01 / 0001 12:00:00 ق.ظ");
-            if (publicClass.val == valu) publicClass.val = DateTime.Today;
-            dateTimePicker.Value = publicClass.val;
 
             Dictionary<string, int> list;
             list = publicClass.File_List;
             if (File.Exists(publicClass.File_Path) == false)
             {
+                MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+
+
                 File.WriteAllText(publicClass.File_Path, "");
                 publicClass.SaveTextFile("669", list["Length"]);
                 publicClass.SaveTextFile("335", list["Width"]);
                 publicClass.SaveTextFile("10", list["DateInNum_X"]);
                 publicClass.SaveTextFile("10", list["DateInNum_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["DateInNum_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["DateInNum_Font"]);
                 publicClass.SaveTextFile("10", list["DateInWord_X"]);
                 publicClass.SaveTextFile("30", list["DateInWord_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["DateInWord_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["DateInWord_Font"]);
                 publicClass.SaveTextFile("true", list["DateInWord_Enable"]);
                 publicClass.SaveTextFile("10", list["MoneyInWord_X"]);
                 publicClass.SaveTextFile("50", list["MoneyInWord_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["MoneyInWord_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["MoneyInWord_Font"]);
                 publicClass.SaveTextFile("10", list["For_X"]);
                 publicClass.SaveTextFile("70", list["For_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["For_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["For_Font"]);
                 publicClass.SaveTextFile("10", list["NationalCode_X"]);
                 publicClass.SaveTextFile("90", list["NationalCode_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["NationalCode_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["NationalCode_Font"]);
                 publicClass.SaveTextFile("true", list["NationalCode_Enable"]);
                 publicClass.SaveTextFile("10", list["MoneyInNum_X"]);
                 publicClass.SaveTextFile("110", list["MoneyInNum_Y"]);
-                publicClass.SaveTextFile("Microsoft Sans Serif,8/25,Regular", list["MoneyInNum_Font"]);
+                publicClass.SaveTextFile("Arial,12,Bold", list["MoneyInNum_Font"]);
                 publicClass.SaveTextFile("true", list["Date_Enable"]);
             }
             try

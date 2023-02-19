@@ -15,8 +15,8 @@ namespace Czech
     {
         #region Attributes
 
-        static DateTime Val;
-        public DateTime val 
+        static string Val;
+        public string val 
         { 
             set { Val = value; }
             get { return Val; }
