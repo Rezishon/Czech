@@ -15,6 +15,13 @@ namespace Czech
     {
         #region Attributes
 
+        static public bool On = true;
+        public bool ON 
+        { 
+            set { On = value; }
+            get { return On; }
+        }
+
         static string Val;
         public string val 
         { 
@@ -402,6 +409,36 @@ namespace Czech
             return e;
         }
 
+        public string CammaInMoney(string S)
+        {
+            string[] str = new string[4];
+            string Str = string.Empty;
+            if (S.Contains(","))
+            {
+                str = S.Split(',');
+                foreach (string item in str)
+                {
+                    Str += item;
+                }
+            }
+            else
+            {
+                Str = S;
+            }
+            int sum = 0;
+            for (int i = Str.Length; i > 0; i--)
+            {
+                if (sum == 3)
+                {
+                    Str = Str.Insert(i, ",");
+                    sum = 0;
+                }
+                sum++;
+            }
+            return Str;
+        }
+
+
         #endregion
 
         #region Convert
@@ -497,10 +534,11 @@ namespace Czech
 
         #region Date to Print
 
-        public void C_PrintDate()
+        public string C_PrintDate(string stri)
         {
-            string[] strings = Date.Split('/');
+            string[] strings = stri.Split('/');
             string str;
+            string Total_str = string.Empty;
             foreach (string item in strings)
             {
                 str = item;
@@ -508,9 +546,9 @@ namespace Czech
                 {
                     str = str.Insert(i, " ");
                 }
-                Date_Print += " " + str;
+                Total_str += " " + str;
             }
-            
+            return Total_str;
         }
 
 

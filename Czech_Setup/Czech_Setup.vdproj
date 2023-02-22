@@ -148,6 +148,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -496,7 +512,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Czech Printer"
         "ProductCode" = "8:{0A69170C-7DF3-44B0-AABE-ECA7F2D29B1B}"
-        "PackageCode" = "8:{8D3EB9DA-81C3-4733-9F73-BD7D5E632F66}"
+        "PackageCode" = "8:{6CBACB2E-093B-4A8A-9F2C-44ED53F0C7B8}"
         "UpgradeCode" = "8:{BC91C7CE-A856-4D02-A74E-736AB05B21FF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -511,7 +527,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:Barsam Pazhohesh Tavana Company"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:نرم افزار چاپ چک (شرکت برسام پژوهش)"
+        "ARPCOMMENTS" = "8:Write By Barsam Pazhohesh Co."
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:_8577348A9B364BC5B80653123FD9E6CE"
         "ARPIconIndex" = "3:0"
@@ -641,7 +657,7 @@
             "Target" = "8:_650F2F010AE04A3190175E6371BF2E55"
             "Folder" = "8:_C2EFF73D32154ED19FD68C7AC61D3315"
             "WorkingFolder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
-            "Icon" = "8:"
+            "Icon" = "8:_8577348A9B364BC5B80653123FD9E6CE"
             "Feature" = "8:"
             }
         }

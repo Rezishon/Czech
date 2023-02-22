@@ -29,6 +29,7 @@ namespace Czech
             this.Close();
         }
 
+
         public void Font_set(string str)
         {
             fontDialog1.Font = Font_Load(str);
@@ -43,13 +44,11 @@ namespace Czech
             publicClass.pageLoad();
             string[] strings;
             strings = publicClass.File_Text[list[str]].Split(',');
-            FontStyle style = new FontStyle();
             fo = new Font(strings[0], float.Parse(strings[1]), (FontStyle)Enum.Parse(typeof(FontStyle), strings[2]));
             //MessageBox.Show($"{font.Name},{font.Style},{font.Size}");
             //publicClass.SaveTextFile($"{font.Name},{font.Size},{font.Style}", list[str]);
             return fo;
         }
-
         public bool valid1(string str)
         {
             bool bo = false;
@@ -185,14 +184,14 @@ namespace Czech
             {
                 txtDateInWord1.Enabled = false;
                 txtDateInWord2.Enabled = false;
-                btnFont2.Enabled = false;
+                btnFont1.Enabled = false;
                
             }
             else
             {
                 txtDateInWord1.Enabled = true;
                 txtDateInWord2.Enabled = true;
-                btnFont2.Enabled = true;
+                btnFont1.Enabled = true;
             }
         }
 

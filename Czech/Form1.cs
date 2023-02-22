@@ -29,7 +29,24 @@ namespace Czech
         private void btnOk_Click(object sender, EventArgs e)
         {
             publicClass.Date = fADatePicker.Text;
-            publicClass.Money = txtMount.Text;
+
+            string[] str = new string[4];
+            string Str = string.Empty;
+            if (txtMount.Text.Contains(","))
+            {
+                str = txtMount.Text.Split(',');
+                foreach (string item in str)
+                {
+                    Str += item;
+                }
+                publicClass.Money = Str;
+            }
+            else
+            {
+                publicClass.Money = txtMount.Text;
+            }
+
+
             publicClass.For = txtFor.Text;
             publicClass.NationalCode = txtCode.Text;
 
@@ -61,7 +78,7 @@ namespace Czech
 
                         try
                         {
-                            var digit = long.Parse(txtMount.Text);
+                            var digit = long.Parse(publicClass.Money);
                             publicClass.Money_word = "";
                             publicClass.Money_word = publicClass.ToAlphabet(digit);
                             if (radioToman.Checked == true)
@@ -103,7 +120,8 @@ namespace Czech
 
                         #region تبدیل به تاریخ چاپ
 
-                        publicClass.C_PrintDate();
+
+                        publicClass.Date_Print = publicClass.C_PrintDate(fADatePicker.Text);
 
                         #endregion
 
@@ -143,12 +161,15 @@ namespace Czech
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("fa-IR");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
             if (fADatePicker.Text == "[Empty Value]")
             {
-                fADatePicker.Text = $"{PersianDate.Now.Year}/{PersianDate.Now.Month}/{PersianDate.Now.Day}";
+                
+                fADatePicker.Text = $"{PersianDate.Now.Year}/";
+                fADatePicker.Text += PersianDate.Now.Month.ToString().Length < 2 ? $"0{PersianDate.Now.Month}/" : $"{PersianDate.Now.Month}/";
+                fADatePicker.Text += PersianDate.Now.Day.ToString().Length < 2 ? $"0{PersianDate.Now.Day}" : $"{PersianDate.Now.Day}";
             }
             else
             {
@@ -160,14 +181,18 @@ namespace Czech
             fADatePicker.Font = font;
             Size size = new Size(108, 30);
             fADatePicker.Size = size;
+            fADatePicker.RightToLeft = RightToLeft.No;
 
             this.Controls.Add(fADatePicker);
 
-
-            Load_Page load_Page = new Load_Page();
-            load_Page.Show();
-            System.Threading.Thread.Sleep(5000);
-            load_Page.Close();
+            if (publicClass.ON)
+            {
+                Load_Page load_Page = new Load_Page();
+                load_Page.Show();
+                System.Threading.Thread.Sleep(5000);
+                load_Page.Close();
+            }
+            publicClass.ON = false;
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
             {
@@ -226,5 +251,12 @@ namespace Czech
                 Application.Exit();
             }
         }
+
+        private void txtMount_TextChanged(object sender, EventArgs e)
+        {
+            txtMount.Text = publicClass.CammaInMoney(txtMount.Text);
+            txtMount.SelectionStart = txtMount.Text.Length;
+        }
+
     }
 }

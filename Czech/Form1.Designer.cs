@@ -99,6 +99,7 @@
             this.txtMount.Name = "txtMount";
             this.txtMount.Size = new System.Drawing.Size(177, 36);
             this.txtMount.TabIndex = 0;
+            this.txtMount.TextChanged += new System.EventHandler(this.txtMount_TextChanged);
             this.txtMount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
             // 
             // txtFor
