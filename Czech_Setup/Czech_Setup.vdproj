@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0A381C1D4E324E03A61A3B56D96279FD"
+        "MsmKey" = "8:_02E20EAF86A243489BA09A3F3E4F43FB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4E740AFA40144BADB138A8D09400EE18"
+        "MsmKey" = "8:_0A381C1D4E324E03A61A3B56D96279FD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -249,12 +249,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A381C1D4E324E03A61A3B56D96279FD"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_02E20EAF86A243489BA09A3F3E4F43FB"
             {
-            "SourcePath" = "8:..\\Fonts\\image2.jpg"
-            "TargetName" = "8:image2.jpg"
+            "SourcePath" = "8:..\\Fonts\\ReadME.txt"
+            "TargetName" = "8:ReadME.txt"
             "Tag" = "8:"
-            "Folder" = "8:_79254CD871C841E28A1E75A3C9A5A599"
+            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -269,12 +269,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4E740AFA40144BADB138A8D09400EE18"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A381C1D4E324E03A61A3B56D96279FD"
             {
-            "SourcePath" = "8:..\\Fonts\\ReadME.txt"
-            "TargetName" = "8:ReadME.txt"
+            "SourcePath" = "8:..\\Fonts\\image2.jpg"
+            "TargetName" = "8:image2.jpg"
             "Tag" = "8:"
-            "Folder" = "8:_B5CFCBCA455C4F56AAAB7A2B4AB88EE9"
+            "Folder" = "8:_79254CD871C841E28A1E75A3C9A5A599"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -512,7 +512,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Czech Printer"
         "ProductCode" = "8:{0A69170C-7DF3-44B0-AABE-ECA7F2D29B1B}"
-        "PackageCode" = "8:{6CBACB2E-093B-4A8A-9F2C-44ED53F0C7B8}"
+        "PackageCode" = "8:{C5549FB4-5E5D-43B6-8656-0372E0169B2E}"
         "UpgradeCode" = "8:{BC91C7CE-A856-4D02-A74E-736AB05B21FF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

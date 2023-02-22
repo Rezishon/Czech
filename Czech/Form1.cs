@@ -74,7 +74,7 @@ namespace Czech
 
                         #region تبدیل به حروف
 
-                        if (!publicClass.InputValidator(txtMount.Text)) return;
+                        if (!publicClass.InputValidator(publicClass.Money)) return;
 
                         try
                         {
