@@ -123,7 +123,7 @@ namespace Czech
                 int PH = document.DefaultPageSettings.PaperSize.Height;
 
 
-                publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                publicClass.Image_path = "C:\\Users\\Public\\Documents\\BPT_Resources\\Image.jpg";
                 publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
 
                 //e.Graphics.DrawImage(publicClass.Czech_Image, PH - (H), (hei - (W / 2)) + Y);

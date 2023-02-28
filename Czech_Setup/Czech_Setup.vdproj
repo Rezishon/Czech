@@ -272,9 +272,9 @@
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A381C1D4E324E03A61A3B56D96279FD"
             {
             "SourcePath" = "8:..\\Fonts\\image2.jpg"
-            "TargetName" = "8:image2.jpg"
+            "TargetName" = "8:Image.jpg"
             "Tag" = "8:"
-            "Folder" = "8:_79254CD871C841E28A1E75A3C9A5A599"
+            "Folder" = "8:_CE048309A01D43439B019BAD8D226C0A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -471,17 +471,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_79254CD871C841E28A1E75A3C9A5A599"
-                    {
-                    "Name" = "8:Resources"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_56BF8E0062B74097BA1FF246897CE3FA"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_B61A233FEDC54F3E92317F044E32BEFA"
@@ -493,6 +482,29 @@
             "Property" = "8:FontsFolder"
                 "Folders"
                 {
+                }
+            }
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_CC1CBCCAE2514B63AD2882964C3CAA09"
+            {
+            "DefaultLocation" = "8:C:\\Users\\Public\\Documents"
+            "Name" = "8:Public"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY1"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_CE048309A01D43439B019BAD8D226C0A"
+                    {
+                    "Name" = "8:BPT_Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_56BF8E0062B74097BA1FF246897CE3FA"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }

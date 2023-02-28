@@ -194,9 +194,9 @@ namespace Czech
             }
             publicClass.ON = false;
 
-            if (!File.Exists(Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg"))
+            if (!File.Exists("C:\\Users\\Public\\Documents\\BPT_Resources\\Image.jpg"))
             {
-                DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image2.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                DialogResult dialog = MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{"C:\\Users\\Public\\Documents\\BPT_Resources"}\" \nو با نام \n\"Image.jpg\" \nذخیره نمایید.", "خطا عدم وجود تصویر چک", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                 if (dialog == DialogResult.Retry) Form1_Load(sender, e);
                 else Application.Exit();
             }
@@ -209,7 +209,7 @@ namespace Czech
             list = publicClass.File_List;
             if (File.Exists(publicClass.File_Path) == false)
             {
-                MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{Directory.GetCurrentDirectory() + "\\Resources"}\" \nو با نام \n\"image2.jpg\" \nذخیره نمایید.", "تعویض تصویر چک", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                MessageBox.Show($"لطفا تصویر چک خود را با ابعاد دقیق ،به میلی متر یا سانتی متر ،در آدرس \n\"{"C:\\Users\\Public\\Documents\\BPT_Resources"}\" \nو با نام \n\"Image.jpg\" \nذخیره نمایید.", "تعویض تصویر چک", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
 
 
                 File.WriteAllText(publicClass.File_Path, "");
@@ -242,7 +242,7 @@ namespace Czech
                 publicClass.pageLoad();
                 publicClass.PageHeight = publicClass.File_Text[list["Length"]];
                 publicClass.PageWidth = publicClass.File_Text[list["Width"]];
-                publicClass.Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                publicClass.Image_path = "C:\\Users\\Public\\Documents\\BPT_Resources\\Image.jpg";
                 publicClass.Czech_Image = Image.FromFile(publicClass.Image_path);
             }
             catch (Exception ex)

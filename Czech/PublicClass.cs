@@ -29,7 +29,7 @@ namespace Czech
             get { return Val; }
         }
 
-        static string file_path = Directory.GetCurrentDirectory() + "\\Resources\\File.txt";
+        static string file_path = "C:\\Users\\Public\\Documents\\BPT_Resources\\File.txt";
         static string[] file_text = new string[23];
         static public PrintDocument document = new PrintDocument();
         static public string image_path;
@@ -285,7 +285,7 @@ namespace Czech
                     NationalCode,"NationalCode_X","NationalCode_Y", 
                     Money_Print,"MoneyInNum_X","MoneyInNum_Y" };
 
-                Image_path = Directory.GetCurrentDirectory() + "\\Resources\\image2.jpg";
+                Image_path = "C:\\Users\\Public\\Documents\\BPT_Resources\\Image.jpg";
                 Czech_Image = Image.FromFile(Image_path);
                 e.Graphics.DrawImage(Czech_Image, 0, 0);
                 pageLoad();
